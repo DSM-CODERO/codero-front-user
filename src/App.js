@@ -1,7 +1,10 @@
 import "./App.css";
+import Login from "./components/pages/auth/login";
 
 function App() {
-  return <>코드로</>;
+  return (
+    <Login/>
+  )
 }
 
 export default App;
