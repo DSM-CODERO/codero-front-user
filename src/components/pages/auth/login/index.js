@@ -50,11 +50,11 @@ export default function Login() {
               className="password"
               placeholder="Password"
             />
-            {value.hidePassword ? (
-              <img onClick={handleClickHidePassword} src={eyeImg} alt="" />
-            ) : (
-              <img onClick={handleClickHidePassword} src={hideImg} alt="" />
-            )}
+            <img
+              onClick={handleClickHidePassword}
+              src={value.hidePassword ? eyeImg : hideImg}
+              alt=""
+            />
           </div>
           <div className="loginBtn">
             <span>로그인</span>
