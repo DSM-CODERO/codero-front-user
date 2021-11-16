@@ -14,10 +14,8 @@ export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  .box {
-    width: 542px;
-    height: 356px;
-  }
+  margin-bottom: 163px;
+
   .sign {
     button {
       font-size: 17px;
@@ -58,7 +56,7 @@ export const MainDiv = styled.div`
     flex-direction: column;
     align-items: center;
     input {
-      width: 437px;
+      width: 467px;
       height: 40px;
       border-radius: 24px;
       border: 1px solid #5f6ca8;
@@ -67,6 +65,13 @@ export const MainDiv = styled.div`
     input::placeholder {
       color: #848ebc;
       font-size: 17px;
+    }
+    img {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      margin-top: 40px;
+      margin-left: -30px;
     }
     .loginBtn {
       width: 467px;

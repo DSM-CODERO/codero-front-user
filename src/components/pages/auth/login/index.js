@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import logoImg from "../../../../assets/img/logo.png";
+import lookImg from "../../../../assets/img/look.png";
 import Footer from "../../../common/footer";
 
 export default function Login() {
@@ -10,7 +11,6 @@ export default function Login() {
         <img src={logoImg} alt="" />
       </S.Header>
       <S.MainDiv>
-        <div className="box">
           <div className="sign">
             <button className="login">
               <span>로그인</span>
@@ -20,15 +20,21 @@ export default function Login() {
             </button>
           </div>
           <div className="main">
-            <input className="email" placeholder="E-mail" />
-            <input className="password" placeholder="Password" />
+            <input type="search" className="email" placeholder="E-mail" />
+            <div>
+              <input
+                type="search"
+                className="password"
+                placeholder="Password"
+              />
+              <img src={lookImg} alt="" />
+            </div>
             <div className="loginBtn">
               <span>로그인</span>
             </div>
           </div>
-        </div>
       </S.MainDiv>
-      <Footer/>
+      <Footer />
     </>
   );
 }
