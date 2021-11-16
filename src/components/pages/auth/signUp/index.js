@@ -37,7 +37,6 @@ export default function SignUp() {
         <img src={logoImg} alt="" />
       </S.Header>
       <S.MainDiv>
-        <div className="box">
           <div className="sign">
             <button className="login">
               <span>로그인</span>
@@ -100,7 +99,6 @@ export default function SignUp() {
               <span>회원가입</span>
             </div>
           </div>
-        </div>
       </S.MainDiv>
       <Footer />
     </>

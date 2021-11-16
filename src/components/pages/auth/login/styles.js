@@ -42,6 +42,10 @@ export const MainDiv = styled.div`
       background-color: #d2d2d2;
       height: 38px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+    .signUp:hover {
+        transform: translateY(7px);
     }
   }
   .main {
