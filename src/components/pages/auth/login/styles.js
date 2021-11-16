@@ -41,6 +41,7 @@ export const MainDiv = styled.div`
       margin-left: 94px;
       background-color: #d2d2d2;
       height: 38px;
+      cursor: pointer;
     }
   }
   .main {
@@ -72,6 +73,7 @@ export const MainDiv = styled.div`
       height: 16px;
       margin-top: 40px;
       margin-left: -30px;
+      cursor: pointer;
     }
     .loginBtn {
       width: 467px;
@@ -83,6 +85,7 @@ export const MainDiv = styled.div`
       justify-content: center;
       align-items: center;
       margin-top: 43px;
+      cursor: pointer;
       span {
         color: white;
         font-weight: 100;

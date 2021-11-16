@@ -34,6 +34,7 @@ export const MainDiv = styled.div`
     .login {
       background-color: #d2d2d2;
       height: 45px;
+      cursor: pointer;
     }
     .signUp {
       margin-left: 94px;
@@ -65,19 +66,20 @@ export const MainDiv = styled.div`
       color: #848ebc;
       font-size: 17px;
     }
-    .look {
+    img {
       position: absolute;
+      margin-left: -40px;
+      cursor: pointer;
+    }
+    .look {
       width: 20px;
       height: 20px;
       margin-top: 32px;
-      margin-left: -40px;
     }
     .send {
-      position: absolute;
       width: 17px;
       height: 17px;
       margin-top: 57px;
-      margin-left: -40px;
     }
     .signUpBtn {
       width: 467px;
@@ -89,6 +91,7 @@ export const MainDiv = styled.div`
       justify-content: center;
       align-items: center;
       margin-top: 43px;
+      cursor: pointer;
       span {
         color: white;
         font-weight: 100;
