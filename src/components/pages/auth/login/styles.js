@@ -56,7 +56,7 @@ export const MainDiv = styled.div`
     flex-direction: column;
     align-items: center;
     input {
-      width: 467px;
+      width: 437px;
       height: 40px;
       border-radius: 24px;
       border: 1px solid #5f6ca8;
