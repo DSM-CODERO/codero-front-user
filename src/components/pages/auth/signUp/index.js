@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import logoImg from "../../../../assets/img/logo.png";
-import lookImg from "../../../../assets/img/look.png";
+import eyeImg from "../../../../assets/img/eye.png";
+import hideImg from "../../../../assets/img/hide.png";
 import sendImg from "../../../../assets/img/send.png";
 import Footer from "../../../common/footer";
 
 export default function SignUp() {
+  const [value, setValue] = useState({
+    email: "",
+    authentication: "",
+    password: "",
+    hidePassword: true,
+    passwordCheck: "",
+    hidePasswordCheck: true,
+    nickname: "",
+  });
+
+  const handleClickHidePassword = (props) => () => {
+    console.log(props);
+    if (props === "hidePassword") {
+      setValue({ ...value, hidePassword: !value.hidePassword });
+    } else {
+      setValue({ ...value, hidePasswordCheck: !value.hidePasswordCheck });
+    }
+  };
+
+  const handleInputChange = (props) => (e) => {
+    setValue({ ...value, [props]: e.target.value });
+    console.log(value);
+  };
+
   return (
     <>
       <S.Header>
@@ -23,31 +48,54 @@ export default function SignUp() {
           </div>
           <div className="main">
             <div>
-              <input type="search" className="email" placeholder="E-mail" />
+              <input
+                type="text"
+                onChange={handleInputChange("email")}
+                className="email"
+                placeholder="E-mail"
+              />
               <img className="send" src={sendImg} alt="" />
             </div>
             <input
-              type="search"
+              type="text"
+              onChange={handleInputChange("authentication")}
               className="authentication"
               placeholder="인증번호를 입력하세요"
             />
             <div>
               <input
-                type="search"
+                type={value.hidePassword ? "password" : "text"}
+                onChange={handleInputChange("password")}
                 className="password"
                 placeholder="Password"
               />
-              <img className="look" src={lookImg} alt="" />
+              <img
+                onClick={handleClickHidePassword("hidePassword")}
+                className="look"
+                src={value.hidePassword ? eyeImg : hideImg}
+                alt=""
+              />
             </div>
             <div>
               <input
-                type="search"
+                type={value.hidePasswordCheck ? "password" : "text"}
+                onChange={handleInputChange("passwordCheck")}
                 className="password"
                 placeholder="Password 확인"
               />
-              <img className="look" src={lookImg} alt="" />
+              <img
+                onClick={handleClickHidePassword("hidePasswordCheck")}
+                className="look"
+                src={value.hidePasswordCheck ? eyeImg : hideImg}
+                alt=""
+              />
             </div>
-            <input type="search" className="nickname" placeholder="닉네임" />
+            <input
+              type="text"
+              onChange={handleInputChange("nickname")}
+              className="nickname"
+              placeholder="닉네임"
+            />
             <div className="signUpBtn">
               <span>회원가입</span>
             </div>
