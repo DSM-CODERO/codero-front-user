@@ -11,10 +11,12 @@ export const Header = styled.div`
 `;
 
 export const MainDiv = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap");
   display: flex;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 40px;
+  font-family: "Anton", sans-serif;
   .sign {
     button {
       font-size: 17px;
@@ -38,7 +40,7 @@ export const MainDiv = styled.div`
       transition: 0.3s;
     }
     .login:hover {
-        transform: translateY(7px);
+      transform: translateY(7px);
     }
     .signUp {
       margin-left: 94px;
@@ -98,7 +100,6 @@ export const MainDiv = styled.div`
       cursor: pointer;
       span {
         color: white;
-        font-weight: 100;
       }
     }
     .email {
