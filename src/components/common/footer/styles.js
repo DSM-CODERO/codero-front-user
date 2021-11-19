@@ -24,5 +24,12 @@ export const FooterDiv = styled.div`
     color: #7b7b7b;
     font-size: 10px;
     text-align: center;
+    font-family: "Anton", sans-serif;
+  }
+  .role {
+    width: 30px;
+    color: #7b7b7b;
+    font-size: 10px;
+    text-align: center;
   }
 `;

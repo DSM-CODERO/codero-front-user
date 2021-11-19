@@ -10,8 +10,8 @@ export default function Footer() {
           <img className="logo" src={logoImg} alt="" />
         </span>
         <span>
-          <div className="member">Front</div>
-          <div className="member">Back</div>
+          <div className="role">Front</div>
+          <div className="role">Back</div>
         </span>
         <span>
           <div className="member">전영준</div>
