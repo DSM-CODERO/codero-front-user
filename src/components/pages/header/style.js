@@ -19,6 +19,7 @@ export const Input = styled.input`
   border-radius: 5px;
   border: none;
   font-family: "Noto Sans KR", sans-serif;
+  padding-left: 20px;
 `;
 export const Button = styled.button`
   margin-right: 40px;
