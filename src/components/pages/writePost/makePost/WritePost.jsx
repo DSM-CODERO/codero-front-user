@@ -14,11 +14,6 @@ const WritePost = () => {
     'dart',
   ];
 
-  const [selectedFile, setSelectedFile] = useState(null);
-  const chooseFile = (e) => {
-    setSelectedFile(e.target.files[0]);
-  };
-
   const contentRef = useRef();
   const [contentData, setContent] = useState('');
 
@@ -40,9 +35,22 @@ const WritePost = () => {
     }
   };
 
+  const [fileUrl, setFileUrl] = useState([]);
+  const imageNum = useRef(0);
+  const chooseFile = (event) => {
+    const imageFile = event.target.files[0];
+    const imageUrl = URL.createObjectURL(imageFile);
+    const imageData = {
+      image: imageUrl,
+      id: imageNum.current++,
+    };
+    setFileUrl([...fileUrl, imageData]);
+
+    console.table(fileUrl);
+  };
+
   return (
     <S.Page>
-      <img src={selectedFile} alt="a" />
       <S.Panel>
         <S.Title>게시물 작성</S.Title>
         <S.InputPanel>
@@ -61,9 +69,10 @@ const WritePost = () => {
             <S.AddFile for="input-file">파일첨부</S.AddFile>
             <input
               style={{ display: 'none' }}
-              onClick={chooseFile}
+              onChange={chooseFile}
               id="input-file"
               type="file"
+              accept=" image/jpeg, image/png, image/jpg"
             />
           </S.InputHeader>
           <S.PostInput ref={contentRef} spellCheck="false" />
