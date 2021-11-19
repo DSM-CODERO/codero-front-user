@@ -3,46 +3,47 @@ import * as S from './style';
 
 const WritePost = () => {
   const languageList = [
-    'C/C++',
+    'C/C++', // 임시로 작성한 언어 리스트
     'C#',
     'java',
     'python',
-    'java script',
-    'type script',
+    'javaScript',
+    'typeScript',
     'kotlin',
     'swift',
     'dart',
   ];
 
   const contentRef = useRef();
-  const [contentData, setContent] = useState('');
-
   const titleRef = useRef();
-  const [title, setTitle] = useState('');
-
   const languageRef = useRef();
-  const [language, setLanguage] = useState(null);
 
   const submit = () => {
-    setContent(contentRef.current.value);
-    setTitle(titleRef.current.value);
-    setLanguage(languageRef.current.value);
+    const data = {
+      title: titleRef.current.value,
+      content: contentRef.current.value,
+      language: languageRef.current.value,
+    };
+
+    console.table(data);
   };
 
+  // key 입력 이벤트를 받아 title에서 content로 focus를 변경한다
   const nextFocus = (e) => {
     if (e.key === 'Enter') {
       contentRef.current.focus();
     }
   };
 
-  const [fileUrl, setFileUrl] = useState([]);
-  const imageNum = useRef(0);
-  const chooseFile = (event) => {
-    const imageFile = event.target.files[0];
+  const [fileUrl, setFileUrl] = useState([]); // 이미지 값 저장
+  const imageNum = useRef(0); // 배열의 키 값으로 활용
+
+  const chooseFile = (e) => {
+    const imageFile = e.target.files[0];
     const imageUrl = URL.createObjectURL(imageFile);
     const imageData = {
       image: imageUrl,
-      id: imageNum.current++,
+      id: imageNum.current++, //key 값을 변경해가며 추가
     };
     setFileUrl([...fileUrl, imageData]);
 
@@ -79,10 +80,6 @@ const WritePost = () => {
         </S.InputPanel>
         <S.Submit onClick={submit}>게시물 등록</S.Submit>
       </S.Panel>
-
-      <h5>{title}</h5>
-      <h6>{language}</h6>
-      <p style={{ whiteSpace: 'pre-line' }}>{contentData}</p>
     </S.Page>
   );
 };
