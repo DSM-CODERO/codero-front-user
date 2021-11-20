@@ -12,13 +12,14 @@ export const HeadDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Input = styled.input`
+export const Select = styled.input`
   width: 450px;
   height: 30px;
   margin-right: 130px;
   border-radius: 5px;
   border: none;
   font-family: "Noto Sans KR", sans-serif;
+  padding-left: 20px;
 `;
 export const Button = styled.button`
   margin-right: 40px;
@@ -44,4 +45,35 @@ export const DocImg = styled.img`
   height: 18px;
   margin-left: 200px;
   position: absolute;
+`;
+
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover {
+    display: block;
+  }
+`;
+
+export const Dropcontent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  &content:hover {
+    background-color: #ddd;
+    display: block;
+  }
+`;
+
+export const Content = styled.div`
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 13px;
 `;
