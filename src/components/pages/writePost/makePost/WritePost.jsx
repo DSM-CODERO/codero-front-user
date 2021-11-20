@@ -1,17 +1,20 @@
 import { useRef, useState } from 'react';
+import ImageView from './ImageView';
 import * as S from './style';
 
 const WritePost = () => {
   const languageList = [
     'C/C++', // 임시로 작성한 언어 리스트
     'C#',
-    'java',
-    'python',
-    'javaScript',
-    'typeScript',
-    'kotlin',
-    'swift',
-    'dart',
+    'Objective-C',
+    'GO',
+    'Java',
+    'Python',
+    'JavaScript',
+    'TypeScript',
+    'Kotlin',
+    'Swift',
+    'Dart',
   ];
 
   const contentRef = useRef();
@@ -19,13 +22,20 @@ const WritePost = () => {
   const languageRef = useRef();
 
   const submit = () => {
-    const data = {
-      title: titleRef.current.value,
-      content: contentRef.current.value,
-      language: languageRef.current.value,
-    };
+    const title = titleRef.current.value;
+    const content = contentRef.current.value;
+    const language = languageRef.current.value;
 
-    console.table(data);
+    if (title && content) {
+      const data = {
+        title,
+        content,
+        language,
+      };
+      console.table(data);
+    } else {
+      alert('제목과 내용을 모두 입력해주세요!!');
+    }
   };
 
   // key 입력 이벤트를 받아 title에서 content로 focus를 변경한다
@@ -76,7 +86,21 @@ const WritePost = () => {
               accept=" image/jpeg, image/png, image/jpg"
             />
           </S.InputHeader>
-          <S.PostInput ref={contentRef} spellCheck="false" />
+          <S.PostInput
+            ref={contentRef}
+            spellCheck="false"
+            placeholder="내용을 입력해주세요"
+          />
+          <S.Preview>
+            {fileUrl.map((img) => (
+              <ImageView
+                key={img.id}
+                image={img}
+                setFile={setFileUrl}
+                data={fileUrl}
+              />
+            ))}
+          </S.Preview>
         </S.InputPanel>
         <S.Submit onClick={submit}>게시물 등록</S.Submit>
       </S.Panel>

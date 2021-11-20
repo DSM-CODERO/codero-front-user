@@ -1,8 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InputPanel = styled.div`
-  width: 1364px;
-  height: 647px;
+  /* width: 1364px; */
+  /* height: 647px; */
+  width: auto;
+  height: auto;
   border: #707070 1px solid;
   border-radius: 15px;
 `;
@@ -43,7 +45,7 @@ export const LangSelect = styled.select`
   border-radius: 10px;
   padding-left: 20px;
 
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: normal;
 `;
 
@@ -53,7 +55,7 @@ export const TitleInput = styled.input`
   border: none;
   font-size: 35px;
   color: #324290;
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: normal;
 `;
 
@@ -65,7 +67,7 @@ export const AddFile = styled.label`
   color: white;
   border-radius: 15px;
 
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: normal;
 
   display: flex;
@@ -86,7 +88,7 @@ export const PostInput = styled.textarea`
   resize: none;
 
   font-size: 25px;
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: normal;
 `;
 
@@ -95,7 +97,7 @@ export const Title = styled.label`
   color: #324290;
   margin-bottom: 48px;
 
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: bold;
 `;
 
@@ -113,6 +115,30 @@ export const Submit = styled.button`
 
   justify-self: right;
 
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   font-weight: 500;
+`;
+
+export const Preview = styled.div`
+  width: 1340px;
+  margin: 10px;
+  /* border: 1px black solid; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+export const PreviewImage = styled.img`
+  height: 100px;
+  margin: 10px;
+`;
+
+export const CancelBtn = styled.img`
+  width: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 13px;
+  right: 13px;
 `;
