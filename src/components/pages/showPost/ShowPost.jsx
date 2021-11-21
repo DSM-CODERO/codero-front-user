@@ -5,6 +5,7 @@ import del from '../../../assets/img/del.svg'
 const ShowPost = () => {
   const text ={
     // test용 객체
+    writer: "kim",
     title:"C++ 표준 라이브러리인 <algorithm> 라이브러리에 대해",
     content:`
     C++ 표준 라이브러리 <algorithm> 라이브러리에는 원소들에 대해 작업할 수 있는 여러가지 함수(검색, 정렬, 원소들 수정하기, 개수 세기 등등) 들을 정의하고 있습니다.
@@ -16,6 +17,13 @@ const ShowPost = () => {
     return (
     <S.Page>
       <S.Panel>
+        <S.ContentHeader>
+          <S.TitleBar>
+            <S.TopTitle>{text.title}</S.TopTitle>
+            <S.Language>{text.language}</S.Language>
+          </S.TitleBar>
+          <S.Writer>{text.writer}</S.Writer>
+        </S.ContentHeader>
         <S.Post>
           <S.BtnBar>
             <S.Button>

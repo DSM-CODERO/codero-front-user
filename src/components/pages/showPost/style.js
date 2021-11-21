@@ -58,3 +58,39 @@ export const BtnBar=styled.div`
   margin:50px;
   justify-self:right;
 `;
+
+export const TopTitle=styled.span`
+  font-size:36px;
+  font-weight:bold;
+  color:#324290;
+  max-width:1000px;
+  display:block;
+  
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+`;
+
+export const Language=styled.span`
+  font-size:24px;
+  font-weight:bold;
+  margin-left:20px;
+  color:#324290;
+  padding-bottom: 5px;
+`;
+
+export const TitleBar=styled.div`
+  display: flex;
+  align-items:flex-end;
+`;
+
+export const ContentHeader=styled.div`
+  display:flex;
+  justify-content: space-between;
+  margin-bottom:30px;
+`;
+
+export const Writer=styled.span`
+  font-size:37px;
+  color:#324290;
+`;
