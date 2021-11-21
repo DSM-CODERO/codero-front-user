@@ -1,4 +1,6 @@
 import * as S from './style';
+import patchBtn from '../../../assets/img/patchBtn.svg'
+import del from '../../../assets/img/del.svg'
 
 const ShowPost = () => {
   const text ={
@@ -15,6 +17,16 @@ const ShowPost = () => {
     <S.Page>
       <S.Panel>
         <S.Post>
+          <S.BtnBar>
+            <S.Button>
+              <img src={patchBtn} alt="patch button"/>
+              <label>수정</label>
+            </S.Button>
+            <S.Button>
+              <img src={del} alt="delete button"/>
+              <label>삭제</label>
+            </S.Button>
+          </S.BtnBar>
           <S.Title>게시글</S.Title>
           <S.PostText>{text.content}</S.PostText>
         </S.Post>

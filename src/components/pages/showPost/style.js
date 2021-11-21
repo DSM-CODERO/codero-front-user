@@ -38,4 +38,23 @@ export const Title=styled.h1`
   font-family:"Noto Sans kr";
   color:#324290;
   font-weight:normal;
-  `;
+`;
+
+export const Button=styled.div`
+  display:flex;
+  align-items:center;
+
+  label{
+    margin-left:10px;
+    font-size:30px;
+    align-self:center;
+  }
+`;
+
+export const BtnBar=styled.div`
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin:50px;
+  justify-self:right;
+`;
