@@ -11,12 +11,18 @@ function Header() {
         <s.Select type="input" placeholder="검색할 분야를 입력해주세요" />
         <s.DocImg src={doc} alt="logo" />
         <s.Button>
-          <div className="dropdown">
-            <div>MENU</div>
-            <div className="dropdowncontent">
-              <div className="content">운동용품</div>
-            </div>
-          </div>
+          <s.Dropdown>
+            MENU
+            <s.Dropcontent>
+              <s.Content>Front-end</s.Content>
+              <s.Content>Back-end</s.Content>
+              <s.Content>Android</s.Content>
+              <s.Content>IOS</s.Content>
+              <s.Content>AI</s.Content>
+              <s.Content>SECURITY</s.Content>
+              <s.Content>GAME</s.Content>
+            </s.Dropcontent>
+          </s.Dropdown>
         </s.Button>
         <s.Button>MYPAGE</s.Button>
         <s.Button>LOGIN/SIGN UP</s.Button>

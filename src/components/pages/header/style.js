@@ -51,7 +51,9 @@ export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
   &:hover {
-    display: block;
+    > div {
+      display: block;
+    }
   }
 `;
 
@@ -64,7 +66,6 @@ export const Dropcontent = styled.div`
   z-index: 1;
   &content:hover {
     background-color: #ddd;
-    display: block;
   }
 `;
 
