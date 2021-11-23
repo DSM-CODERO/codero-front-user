@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Page = styled.main`
   display: grid;
@@ -26,7 +26,7 @@ export const PostText = styled.div`
   white-space: pre-line;
   word-break: break-all;
   font-size: 25px;
-  font-family: "Noto Sans kr";
+  font-family: 'Noto Sans kr';
   margin: 100px;
   margin-top: 50px;
   color: #71737b;
@@ -35,7 +35,7 @@ export const PostText = styled.div`
 
 export const Title = styled.h1`
   font-size: 60px;
-  font-family: "Noto Sans kr";
+  font-family: 'Noto Sans kr';
   color: #324290;
   font-weight: normal;
 `;
@@ -94,3 +94,40 @@ export const Writer = styled.span`
   font-size: 26px;
   color: #324290;
 `;
+
+export const CommentInputBar = styled.div`
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 1200px;
+  height: 90px;
+
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    background-color: #324290;
+    width: 90px;
+    height: 90px;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  textarea {
+    width: 1140px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* border: none; */
+    border-radius: 10px;
+    font-size: 25px;
+    padding-top: 25px;
+    resize: none;
+  }
+`;
+
+export const CoomentSubmit = styled.button``;

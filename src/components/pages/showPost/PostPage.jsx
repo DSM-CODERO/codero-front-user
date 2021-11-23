@@ -1,10 +1,15 @@
 import ShowPost from './ShowPost';
+import Comment from './Comment';
+import * as S from './style';
 
 const PostPage = () => {
   return (
-    <div>
-      <ShowPost />
-    </div>
+    <S.Page>
+      <S.Panel>
+        <ShowPost />
+        <Comment />
+      </S.Panel>
+    </S.Page>
   );
 };
 
