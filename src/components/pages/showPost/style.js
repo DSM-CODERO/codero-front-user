@@ -35,8 +35,8 @@ export const PostText = styled.div`
 
 export const Title = styled.h1`
   font-size: 60px;
-  font-family: 'Noto Sans kr';
   color: #324290;
+  font-family: 'Noto Sans kr';
   font-weight: normal;
 `;
 
@@ -122,12 +122,55 @@ export const CommentInputBar = styled.div`
     width: 1140px;
     padding-left: 30px;
     padding-right: 30px;
-    /* border: none; */
+    border: none;
     border-radius: 10px;
     font-size: 25px;
     padding-top: 25px;
     resize: none;
+
+    font-family: 'Noto Sans kr';
+    font-weight: normal;
+
+    outline: none;
   }
 `;
 
-export const CoomentSubmit = styled.button``;
+export const CommentBox = styled.div`
+  border-top: gray 1px solid;
+  margin-bottom: 40px;
+`;
+
+export const Comment = styled.div`
+  border-bottom: gray 1px solid;
+  padding: 10px;
+  font-size: 20px;
+  width: 1180px;
+  display: flex;
+  color: #324290;
+  white-space: pre-line;
+  word-break: break-all;
+`;
+
+export const CommentReply = styled.div`
+  border-bottom: gray 1px solid;
+  padding: 10px;
+  padding-left: 50px;
+  font-size: 17px;
+  color: #324290;
+  width: 1140px;
+  display: flex;
+
+  white-space: pre-line;
+  word-break: break-all;
+`;
+
+export const UserComment = styled.p`
+  /* display: flex; */
+
+  b {
+    font-size: 20px;
+    padding-right: 20px;
+  }
+`;
+
+// export const
