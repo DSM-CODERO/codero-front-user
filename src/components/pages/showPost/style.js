@@ -43,6 +43,21 @@ export const Title = styled.h1`
 export const Button = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  padding: 5px;
+
+  // 밀줄 치는 코드
+  text-decoration: none;
+  background-image: linear-gradient(#e9ebf2, #e9ebf2),
+    linear-gradient(#91a7ff, #91a7ff);
+  background-size: 100% 5px, 0 5px;
+  background-position: 50% 0, 50% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s linear;
+
+  &:hover {
+    background-size: 0 2px, 100% 2px;
+  }
 
   label {
     margin-left: 5px;
