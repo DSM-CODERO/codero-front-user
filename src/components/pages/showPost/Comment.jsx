@@ -34,7 +34,13 @@ const Comment = () => {
   const commentRef = useRef();
 
   const submit = () => {
-    console.log(commentRef.current.value);
+    const comment = commentRef.current.value;
+    // 개발자 도구를 통해 maxlength 값을 변경할 경우의 비정상적인 길이의 입력 방지
+    if (comment.length > 500) {
+      alert('비정상적인 입력이 감지되었습니다');
+    } else {
+      console.log(comment);
+    }
   };
 
   return (
@@ -53,15 +59,13 @@ const Comment = () => {
         {commentData.map((data) => (
           <div key={data.id}>
             <S.Comment>
-              <S.UserComment>
-                <b>{data.name}</b>
-                {data.content}
-              </S.UserComment>
+              <b>{data.name}</b>
+              {data.content}
             </S.Comment>
             <div>
               {data.reply.map((repData) => (
                 <S.CommentReply key={repData.id}>
-                  <span>{repData.name}</span>
+                  <b>{repData.name}</b>
                   <span>{repData.content}</span>
                 </S.CommentReply>
               ))}

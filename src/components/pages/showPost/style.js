@@ -140,32 +140,17 @@ export const CommentBox = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Comment = styled.div`
+export const Comment = styled.p`
   border-bottom: gray 1px solid;
   padding: 10px;
-  font-size: 20px;
+  font-size: 18px;
   width: 1180px;
-  display: flex;
   color: #324290;
   white-space: pre-line;
   word-break: break-all;
-`;
 
-export const CommentReply = styled.div`
-  border-bottom: gray 1px solid;
-  padding: 10px;
-  padding-left: 50px;
-  font-size: 17px;
-  color: #324290;
-  width: 1140px;
-  display: flex;
-
-  white-space: pre-line;
-  word-break: break-all;
-`;
-
-export const UserComment = styled.p`
-  /* display: flex; */
+  font-family: 'Noto Sans kr';
+  font-weight: normal;
 
   b {
     font-size: 20px;
@@ -173,4 +158,22 @@ export const UserComment = styled.p`
   }
 `;
 
-// export const
+export const CommentReply = styled.p`
+  border-bottom: gray 1px solid;
+  padding: 10px;
+  padding-left: 50px;
+  font-size: 16px;
+  color: #324290;
+  width: 1140px;
+
+  white-space: pre-line;
+  word-break: break-all;
+
+  font-family: 'Noto Sans kr';
+  font-weight: normal;
+
+  b {
+    font-size: 18px;
+    padding-right: 20px;
+  }
+`;
