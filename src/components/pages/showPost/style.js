@@ -105,33 +105,44 @@ export const CommentInputBar = styled.div`
 
   display: flex;
   justify-content: space-between;
+`;
 
-  button {
-    border: none;
-    border-radius: 10px;
-    background-color: #324290;
-    width: 90px;
-    height: 90px;
+export const SubmitButton = styled.button`
+  border: none;
+  border-radius: 10px;
+  background-color: #324290;
+  width: 90px;
+  height: 90px;
 
-    img {
-      height: 30px;
-    }
+  img {
+    height: 30px;
   }
+`;
 
-  textarea {
-    width: 1140px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 25px;
-    padding-top: 25px;
-    resize: none;
+export const LikeButton = styled(SubmitButton)`
+  background-color: white;
+  img {
+    height: 40px;
+  }
+`;
 
-    font-family: 'Noto Sans kr';
-    font-weight: normal;
+export const CommentInput = styled.textarea`
+  width: 1000px;
+  padding-left: 30px;
+  scrollbar-width: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  padding-top: 25px;
+  resize: none;
 
-    outline: none;
+  font-family: 'Noto Sans kr';
+  font-weight: normal;
+
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
