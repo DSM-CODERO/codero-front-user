@@ -60,6 +60,7 @@ export const Button = styled.div`
   }
 
   label {
+    cursor: pointer;
     margin-left: 5px;
     font-size: 16px;
     align-self: center;
