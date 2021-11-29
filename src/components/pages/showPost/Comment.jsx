@@ -14,7 +14,7 @@ const commentData = [
       {
         id: 1,
         name: 'replyUser1',
-        content: 'ㅇㅈ',
+        content: '설명이 좀 어려운데',
       },
       {
         id: 2,

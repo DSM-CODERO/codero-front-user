@@ -199,6 +199,7 @@ export const CommentReply = styled(Comment)`
 export const WriteReply = styled.div`
   margin: 10px;
   margin-right: 0px;
+  margin-left: 0px;
 
   border-radius: 50px;
   border: 1px gray solid;
@@ -246,7 +247,8 @@ export const RepSubmit = styled.button`
 export const RepArrow = styled.img`
   height: 40px;
   justify-self: right;
-  align-self: center;
+  margin: 10px;
+  /* align-self: center; */
 `;
 
 export const ReplyWriteBar = styled.div`
