@@ -7,10 +7,15 @@ import toggleBtn from '../../../assets/img/toggle.svg';
 const OneUserComment = ({ data }) => {
   const [repWriting, setRepWriting] = useState(false);
   const [toggle, setToggle] = useState(false);
+
   const repRef = useRef();
+
   const writeReply = () => {
-    console.log('click!!');
     setRepWriting((rep) => !rep);
+  };
+
+  const replySubmit = () => {
+    console.log(repRef.current.value);
   };
 
   useEffect(() => {
@@ -41,7 +46,7 @@ const OneUserComment = ({ data }) => {
             <S.RepArrow src={replyArrow} alt="reply curved arrow icon" />
             <S.WriteReply>
               <S.ReplyInput ref={repRef} />
-              <S.RepSubmit>
+              <S.RepSubmit onClick={replySubmit}>
                 <img src={submitPen} alt="reply submit" />
               </S.RepSubmit>
             </S.WriteReply>
