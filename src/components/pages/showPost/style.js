@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Page = styled.main`
   display: grid;
   justify-items: center;
-  /* align-items: center; */
 `;
 
 export const Panel = styled.div`
@@ -13,7 +12,6 @@ export const Panel = styled.div`
 
 export const Post = styled.section`
   width: 1200px;
-  /* height: 1607px; */
   height: auto;
   background-color: #e9ebf2;
   display: grid;
@@ -167,18 +165,24 @@ export const CommentBox = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Comment = styled.p`
+export const Comment = styled.div`
   border-bottom: gray 1px solid;
   padding: 10px;
-  color: #324290;
   white-space: pre-line;
   word-break: break-all;
+  width: 1180px;
+
+  display: flex;
+  justify-content: space-between;
 
   font-family: 'Noto Sans kr';
   font-weight: normal;
 
-  width: 1180px;
-  font-size: 18px;
+  color: #324290;
+
+  span {
+    font-size: 18px;
+  }
 
   b {
     font-size: 20px;
@@ -188,8 +192,11 @@ export const Comment = styled.p`
 
 export const CommentReply = styled(Comment)`
   padding-left: 50px;
-  font-size: 16px;
   width: 1140px;
+
+  span {
+    font-size: 16px;
+  }
 
   b {
     font-size: 18px;
@@ -248,10 +255,18 @@ export const RepArrow = styled.img`
   height: 40px;
   justify-self: right;
   margin: 10px;
-  /* align-self: center; */
 `;
 
 export const ReplyWriteBar = styled.div`
   display: grid;
   grid-template-columns: repeat(2, auto);
+`;
+
+export const Toggle = styled.img`
+  height: 20px;
+  margin: 5px;
+  margin-left: 10px;
+
+  transition: all 0.5s linear;
+  transform: rotate(${({ toggle }) => toggle && '180deg'});
 `;
