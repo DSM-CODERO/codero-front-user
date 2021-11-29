@@ -3,13 +3,13 @@ import submitPen from '../../../assets/img/commentPen.svg';
 import * as S from './style';
 import like from '../../../assets/img/like.png';
 import noLike from '../../../assets/img/noLike.png';
+import OneUserComment from './OneUserComment';
 
 const commentData = [
   {
     id: 1,
     name: 'user1',
-    content:
-      '우와 정말 유익해요!! ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
+    content: '우와 정말 유익해요!!',
     reply: [
       {
         id: 1,
@@ -87,20 +87,7 @@ const Comment = () => {
       </S.CommentInputBar>
       <S.CommentBox>
         {commentData.map((data) => (
-          <div key={data.id}>
-            <S.Comment>
-              <b>{data.name}</b>
-              {data.content}
-            </S.Comment>
-            <div>
-              {data.reply.map((repData) => (
-                <S.CommentReply key={repData.id}>
-                  <b>{repData.name}</b>
-                  <span>{repData.content}</span>
-                </S.CommentReply>
-              ))}
-            </div>
-          </div>
+          <OneUserComment key={data.id} data={data} />
         ))}
       </S.CommentBox>
     </div>

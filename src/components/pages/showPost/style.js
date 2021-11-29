@@ -170,14 +170,15 @@ export const CommentBox = styled.div`
 export const Comment = styled.p`
   border-bottom: gray 1px solid;
   padding: 10px;
-  font-size: 18px;
-  width: 1180px;
   color: #324290;
   white-space: pre-line;
   word-break: break-all;
 
   font-family: 'Noto Sans kr';
   font-weight: normal;
+
+  width: 1180px;
+  font-size: 18px;
 
   b {
     font-size: 20px;
@@ -185,22 +186,70 @@ export const Comment = styled.p`
   }
 `;
 
-export const CommentReply = styled.p`
-  border-bottom: gray 1px solid;
-  padding: 10px;
+export const CommentReply = styled(Comment)`
   padding-left: 50px;
   font-size: 16px;
-  color: #324290;
   width: 1140px;
 
-  white-space: pre-line;
-  word-break: break-all;
+  b {
+    font-size: 18px;
+  }
+`;
+
+export const WriteReply = styled.div`
+  margin: 10px;
+  margin-right: 0px;
+
+  border-radius: 50px;
+  border: 1px gray solid;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: auto;
+  height: 50px;
+`;
+
+export const ReplyInput = styled.textarea`
+  width: 1050px;
+  padding-left: 25px;
+  padding-top: 10px;
+  height: 35px;
+  scrollbar-width: none;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  resize: none;
 
   font-family: 'Noto Sans kr';
   font-weight: normal;
 
-  b {
-    font-size: 18px;
-    padding-right: 20px;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+`;
+
+export const RepSubmit = styled.button`
+  border: none;
+  border-radius: 50px;
+  background-color: #324290;
+  width: 55px;
+  height: 50px;
+
+  img {
+    height: 20px;
+  }
+`;
+
+export const RepArrow = styled.img`
+  height: 40px;
+  justify-self: right;
+  align-self: center;
+`;
+
+export const ReplyWriteBar = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 `;
