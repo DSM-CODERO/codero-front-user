@@ -173,7 +173,9 @@ export const Comment = styled.div`
   width: 1180px;
 
   display: flex;
-  justify-content: space-between;
+
+  //toggle이 오른쪽에 위치
+  /* justify-content: space-between; */
 
   font-family: 'Noto Sans kr';
   font-weight: normal;
@@ -269,4 +271,13 @@ export const Toggle = styled.img`
 
   transition: all 0.5s linear;
   transform: rotate(${({ toggle }) => toggle && '180deg'});
+`;
+
+export const Like = styled.img`
+  @keyframes heartClick {
+    0% {
+      transform: scale(1.2);
+    }
+  }
+  animation: ${({ like }) => like && 'heartClick 1s'};
 `;

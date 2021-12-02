@@ -45,7 +45,7 @@ const OneUserComment = ({ data }) => {
           <S.ReplyWriteBar>
             <S.RepArrow src={replyArrow} alt="reply curved arrow icon" />
             <S.WriteReply>
-              <S.ReplyInput ref={repRef} />
+              <S.ReplyInput spellcheck="false" ref={repRef} />
               <S.RepSubmit onClick={replySubmit}>
                 <img src={submitPen} alt="reply submit" />
               </S.RepSubmit>

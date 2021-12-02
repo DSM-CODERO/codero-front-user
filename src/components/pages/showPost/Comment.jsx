@@ -1,23 +1,27 @@
 import { useRef, useState } from 'react';
 import submitPen from '../../../assets/img/commentPen.svg';
 import * as S from './style';
-import like from '../../../assets/img/like.png';
-import noLike from '../../../assets/img/noLike.png';
+import like from '../../../assets/img/like.svg';
+import noLike from '../../../assets/img/noLike.svg';
 import OneUserComment from './OneUserComment';
+import { BadTextFilter } from './BadText';
 
 const commentData = [
   {
+    // 여러줄에 걸친 댓글
     id: 1,
     name: 'user1',
     content:
       '우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!우와 정말 유익해요!!',
     reply: [
       {
+        //짧은 답글
         id: 1,
         name: 'replyUser1',
         content: '설명이 좀 어려운데',
       },
       {
+        // 긴 답글
         id: 2,
         name: 'replyUser2',
         content: `벡터(vector) 는 헤더파일 <vector> 에 정의되어 있는 는 순차 컨테이너의 한 종류로, 각각의 원소들이 선형으로 배열되어 있다.
@@ -46,9 +50,23 @@ const commentData = [
     ],
   },
   {
+    // 짧은 댓글
     id: 2,
     name: 'user2',
-    content: '이걸 모르는 사람이 있어??????',
+    content: '이걸 모르는 사람이 있어???',
+    reply: [
+      {
+        id: 1,
+        name: 'replyUser1',
+        content: '설명이 좀 어려운데',
+      },
+    ],
+  },
+  {
+    // 답글 X
+    id: 3,
+    name: 'user3',
+    content: 'C언어는 이 기능이 없나요?',
     reply: [],
   },
 ];
@@ -62,7 +80,7 @@ const Comment = () => {
     // 개발자 도구를 통해 maxlength 값을 변경할 경우의 비정상적인 길이의 입력 방지
     if (comment.length > 500) {
       alert('비정상적인 입력이 감지되었습니다');
-    } else {
+    } else if (BadTextFilter(comment)) {
       console.log(comment);
     }
   };
@@ -78,9 +96,14 @@ const Comment = () => {
           maxLength="500"
           placeholder="댓글을 입력해주세요"
           ref={commentRef}
+          spellcheck="false"
         />
         <S.LikeButton onClick={clickLike}>
-          <img src={likeState ? like : noLike} alt="like post" />
+          <S.Like
+            like={likeState}
+            src={likeState ? like : noLike}
+            alt="like post"
+          />
         </S.LikeButton>
         <S.SubmitButton onClick={submit}>
           <img src={submitPen} alt="comment submit pen" />
