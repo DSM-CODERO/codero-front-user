@@ -22,16 +22,17 @@ export const Board = styled.div`
   justify-content: space-between;
 `;
 
-export const BoardList = styled.button`
+export const BoardList = styled.div`
   width: 150px;
   height: 22px;
-  background-color: rgba(18, 24, 49, 0.1);
   color: #2e3c7e;
   font-family: "Noto Sans KR", sans-serif;
   border: none;
   margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Belt = styled.div`
@@ -57,6 +58,7 @@ export const List = styled.div`
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 20px;
+  text-decoration: none;
 `;
 
 export const ListImg = styled.img`
