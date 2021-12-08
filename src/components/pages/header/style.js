@@ -77,4 +77,7 @@ export const Content = styled.div`
   text-decoration: none;
   display: block;
   font-size: 13px;
+  &:hover {
+    text-decoration: none;
+  }
 `;
