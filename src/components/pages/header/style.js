@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Head = styled.div`
   width: 100%;
-  height: 80px;
+  height: 60px;
   padding: 0;
   background-color: #2e3c7e;
 `;
@@ -33,8 +33,8 @@ export const Button = styled.button`
 `;
 
 export const MarkImg = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   margin-top: 10px;
   margin-right: 340px;
   margin-left: 50px;
