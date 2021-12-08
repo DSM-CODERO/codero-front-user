@@ -25,6 +25,12 @@ function ListPage() {
               <s.ListTd>전영준</s.ListTd>
               <s.ListTd>2021.11.09</s.ListTd>
             </tr>
+            <tr>
+              <s.ListTd></s.ListTd>
+              <s.ListTd></s.ListTd>
+              <s.ListTd></s.ListTd>
+              <s.ListTd></s.ListTd>
+            </tr>
           </tbody>
         </s.ListTable>
       </s.ListBody>

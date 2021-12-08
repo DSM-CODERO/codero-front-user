@@ -38,6 +38,7 @@ export const ListTh = styled.th`
 
 export const ListTd = styled.td`
   border-bottom: 1px solid #444444;
+  height: 25px;
   padding: 10px;
   text-align: center;
 `;
