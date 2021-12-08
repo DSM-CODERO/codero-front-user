@@ -22,25 +22,25 @@ function Header() {
           <s.Dropdown>
             MENU
             <s.Dropcontent>
-              <Link to="/Front">
+              <Link to="/Front" style={{ textDecoration: "none" }}>
                 <s.Content>Front-end</s.Content>
               </Link>
-              <Link to="/Back">
+              <Link to="/Back" style={{ textDecoration: "none" }}>
                 <s.Content>Back-end</s.Content>
               </Link>
-              <Link to="/Android">
+              <Link to="/Android" style={{ textDecoration: "none" }}>
                 <s.Content>Android</s.Content>
               </Link>
-              <Link to="/IOS">
+              <Link to="/IOS" style={{ textDecoration: "none" }}>
                 <s.Content>IOS</s.Content>
               </Link>
-              <Link to="/AI">
+              <Link to="/AI" style={{ textDecoration: "none" }}>
                 <s.Content>AI</s.Content>
               </Link>
-              <Link to="SECURITY">
+              <Link to="SECURITY" style={{ textDecoration: "none" }}>
                 <s.Content>SECURITY</s.Content>
               </Link>
-              <Link to="GAME">
+              <Link to="GAME" style={{ textDecoration: "none" }}>
                 <s.Content>GAME</s.Content>
               </Link>
             </s.Dropcontent>
