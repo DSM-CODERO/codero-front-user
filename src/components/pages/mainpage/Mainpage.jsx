@@ -17,25 +17,25 @@ function Mainpage() {
         </s.Board>
       </s.Flex>
       <s.Belt>
-        <Link to="/Front">
+        <Link to="/Front" style={{ textDecoration: "none" }}>
           <s.List>
             <s.ListImg src={Front} alt="logo" />
             Frontend
           </s.List>
         </Link>
-        <Link to="/Back">
+        <Link to="/Back" style={{ textDecoration: "none" }}>
           <s.List>
             <s.ListImg src={Back} alt="logo" />
             Backend
           </s.List>
         </Link>
-        <Link to="/Android">
+        <Link to="/Android" style={{ textDecoration: "none" }}>
           <s.List>
             <s.ListImg src={Android} alt="logo" />
             Android
           </s.List>
         </Link>
-        <Link to="/IOS">
+        <Link to="/IOS" style={{ textDecoration: "none" }}>
           <s.List>
             <s.ListImg src={ios} alt="logo" />
             IOS

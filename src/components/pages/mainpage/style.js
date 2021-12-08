@@ -58,7 +58,6 @@ export const List = styled.div`
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 20px;
-  text-decoration: none;
 `;
 
 export const ListImg = styled.img`
