@@ -49,13 +49,21 @@ export const BtnDiv = styled.div`
   justify-content: flex-end;
 `;
 
-export const AddBtn = styled.input`
+export const AddBtn = styled.div`
   width: 80px;
   height: 40px;
   margin-top: 50px;
   border: none;
   border-radius: 10px;
   background-color: #324290;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Penimg = styled.img`
+  width: 25px;
+  height: 25px;
 `;
 
 export const PageDiv = styled.div`

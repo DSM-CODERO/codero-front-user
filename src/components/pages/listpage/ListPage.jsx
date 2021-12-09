@@ -6,7 +6,7 @@ function ListPage() {
   return (
     <s.List>
       <s.ListHead>
-        <s.ListName>인기게시물</s.ListName>
+        <s.ListName>OO게시물</s.ListName>
       </s.ListHead>
       <s.ListBody>
         <s.ListTable>
@@ -35,7 +35,9 @@ function ListPage() {
         </s.ListTable>
       </s.ListBody>
       <s.BtnDiv>
-        <s.AddBtn type="button" src={pen} alt="logo" />
+        <s.AddBtn>
+          <s.Penimg src={pen} logo="alt" />
+        </s.AddBtn>
       </s.BtnDiv>
       <s.PageDiv></s.PageDiv>
     </s.List>
