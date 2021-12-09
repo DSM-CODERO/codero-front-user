@@ -4,7 +4,6 @@ import logoImg from "../../../../assets/img/logo.png";
 import eyeImg from "../../../../assets/img/eye.png";
 import hideImg from "../../../../assets/img/hide.png";
 import sendImg from "../../../../assets/img/send.png";
-import Footer from "../../../common/footer";
 
 export default function SignUp() {
   const [value, setValue] = useState({
@@ -100,7 +99,6 @@ export default function SignUp() {
             </div>
           </div>
       </S.MainDiv>
-      <Footer />
     </>
   );
 }
