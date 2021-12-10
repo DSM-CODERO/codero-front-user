@@ -3,7 +3,7 @@ import * as S from "./styles";
 import logoImg from "../../../../assets/img/logo.png";
 import eyeImg from "../../../../assets/img/eye.png";
 import hideImg from "../../../../assets/img/hide.png";
-import Footer from "../../../common/footer";
+import axios from "axios";
 
 export default function Login() {
   const [value, setValue] = useState({
@@ -61,7 +61,6 @@ export default function Login() {
           </div>
         </div>
       </S.MainDiv>
-      <Footer />
     </>
   );
 }
