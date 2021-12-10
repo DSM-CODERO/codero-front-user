@@ -60,9 +60,8 @@ export default function SignUp() {
           console.log(res);
         })
         .catch((error) => console.log(error));
-    }
-    else {
-      alert('비밀번호가 동일하지 않습니다!');
+    } else {
+      alert("비밀번호가 동일하지 않습니다!");
     }
   };
 
