@@ -21,6 +21,22 @@ export default function Login() {
     console.log(value);
   };
 
+  const handleLoginBtn = () => {
+    console.log(value);
+    const { email, password } = value;
+    axios
+      .post("http://13.209.80.53/auth/signin", {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <S.Header>
@@ -56,7 +72,7 @@ export default function Login() {
               alt=""
             />
           </div>
-          <div className="loginBtn">
+          <div className="loginBtn" onClick={handleLoginBtn}>
             <span>로그인</span>
           </div>
         </div>
