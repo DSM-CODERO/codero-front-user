@@ -4,6 +4,7 @@ import logoImg from "../../../../assets/img/logo.png";
 import eyeImg from "../../../../assets/img/eye.png";
 import hideImg from "../../../../assets/img/hide.png";
 import axios from "axios";
+import { BASE_URL } from "../../../../api/export";
 
 export default function Login() {
   const [value, setValue] = useState({
@@ -25,7 +26,7 @@ export default function Login() {
     console.log(value);
     const { email, password } = value;
     axios
-      .post("http://13.209.80.53/auth/signin", {
+      .post(BASE_URL + "auth/signin", {
         email: email,
         password: password,
       })
