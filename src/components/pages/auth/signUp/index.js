@@ -5,6 +5,7 @@ import eyeImg from "../../../../assets/img/eye.png";
 import hideImg from "../../../../assets/img/hide.png";
 import sendImg from "../../../../assets/img/send.png";
 import axios from "axios";
+import { BASE_URL } from "../../../../api/export";
 
 export default function SignUp() {
   const [value, setValue] = useState({
@@ -23,7 +24,7 @@ export default function SignUp() {
       VALUE: value.email,
     };
     await axios
-      .get("http://13.209.80.53/email", {params})
+      .get(BASE_URL + "email", { params })
       .then((res) => {
         console.log(res);
       })
@@ -47,17 +48,22 @@ export default function SignUp() {
   };
 
   const submitSignup = () => {
-    const { password, email, nickname } = value;
-    axios
-      .post("http://13.209.80.53/auth/signup", {
-        username: nickname,
-        email: email,
-        password: password,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => console.log(error));
+    const { password, passwordCheck, email, nickname } = value;
+    if (password === passwordCheck) {
+      axios
+        .post(BASE_URL + "auth/signup", {
+          username: nickname,
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => console.log(error));
+    }
+    else {
+      alert('비밀번호가 동일하지 않습니다!');
+    }
   };
 
   return (
