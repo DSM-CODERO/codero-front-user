@@ -23,7 +23,7 @@ export default function SignUp() {
       VALUE: value.email,
     };
     await axios
-      .get("http://13.209.80.53/email", { params })
+      .get("http://13.209.80.53/email", {params})
       .then((res) => {
         console.log(res);
       })
@@ -44,6 +44,20 @@ export default function SignUp() {
   const handleInputChange = (props) => (e) => {
     setValue({ ...value, [props]: e.target.value });
     console.log(value);
+  };
+
+  const submitSignup = () => {
+    const { password, email, nickname } = value;
+    axios
+      .post("http://13.209.80.53/auth/signup", {
+        username: nickname,
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -115,7 +129,7 @@ export default function SignUp() {
             className="nickname"
             placeholder="닉네임"
           />
-          <div className="signUpBtn">
+          <div className="signUpBtn" onClick={submitSignup}>
             <span>회원가입</span>
           </div>
         </div>
