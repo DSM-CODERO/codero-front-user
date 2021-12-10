@@ -73,7 +73,7 @@ export default function Login() {
             />
           </div>
           <div className="loginBtn" onClick={handleLoginBtn}>
-            <span>로그인</span>
+            로그인
           </div>
         </div>
       </S.MainDiv>
