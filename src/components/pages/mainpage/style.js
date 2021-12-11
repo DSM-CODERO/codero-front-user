@@ -12,19 +12,19 @@ export const Flex = styled.div`
 `;
 
 export const Board = styled.div`
-  width: 1000px;
+  width: 1100px;
   height: 400px;
   background-color: rgba(18, 24, 49, 0.1);
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const BoardList = styled.div`
-  width: 150px;
-  height: 22px;
+  width: 400px;
+  height: 375px;
   color: #2e3c7e;
   font-family: "Noto Sans KR", sans-serif;
   border: none;
@@ -32,8 +32,20 @@ export const BoardList = styled.div`
   margin-left: 40px;
   margin-right: 40px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
+
+export const BoardProduct = styled.div`
+  width: 300px;
+  height: 150px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: gray 0px 3px 6px;
+  background-color: white;
+`;
+
+export const BoardHead = styled.div``;
 
 export const Belt = styled.div`
   width: 100%;
@@ -50,11 +62,12 @@ export const Belt = styled.div`
 
 export const List = styled.div`
   width: 280px;
-  height: 140px;
+  height: 130px;
   background-color: black;
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 10px;
+  box-shadow: black 2px 8px 8px;
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 20px;
@@ -67,3 +80,9 @@ export const ListImg = styled.img`
   margin-left: 5px;
   margin-right: 50px;
 `;
+
+export const ProductTitle = styled.h2``;
+
+export const ProductText = styled.h5``;
+
+export const ProdcutField = styled.h6``;
