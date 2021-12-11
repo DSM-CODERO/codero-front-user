@@ -20,13 +20,13 @@ export default function SignUp() {
 
   async function emailAuthentication() {
     const params = {
-      KEY: "email",
-      VALUE: value.email,
+      email: value.email,
     };
     await axios
-      .get(BASE_URL + "email", { params })
+      .get(`${BASE_URL}email`, { params })
       .then((res) => {
-        console.log(res);
+        setValue({ ...value, authenticationCheck: res.data });
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
