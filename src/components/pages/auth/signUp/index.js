@@ -11,6 +11,7 @@ export default function SignUp() {
   const [value, setValue] = useState({
     email: "",
     authentication: "",
+    authenticationCheck: "",
     password: "",
     hidePassword: true,
     passwordCheck: "",
@@ -44,24 +45,35 @@ export default function SignUp() {
 
   const handleInputChange = (props) => (e) => {
     setValue({ ...value, [props]: e.target.value });
-    console.log(value);
   };
 
   const submitSignup = () => {
-    const { password, passwordCheck, email, nickname } = value;
-    if (password === passwordCheck) {
-      axios
-        .post(BASE_URL + "auth/signup", {
-          username: nickname,
-          email: email,
-          password: password,
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((error) => console.log(error));
-    } else {
-      alert("비밀번호가 동일하지 않습니다!");
+    const {
+      password,
+      passwordCheck,
+      email,
+      nickname,
+      authentication,
+      authenticationCheck,
+    } = value;
+    if (authentication === authenticationCheck) {
+      if (password === passwordCheck) {
+        axios
+          .post(BASE_URL + "auth/signup", {
+            username: nickname,
+            email: email,
+            password: password,
+          })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => console.log(error));
+      } else {
+        alert("비밀번호가 동일하지 않습니다!");
+      }
+    }
+    else {
+      alert("인증번호가 맞지 않습니다!")
     }
   };
 
