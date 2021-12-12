@@ -3,9 +3,23 @@ import * as S from "./styles";
 import editImg from "../../../assets/img/edit.png";
 import profileImg from "../../../assets/img/profile-user.png";
 import Header from "../header/Header";
-import Footer from "../../common/footer";
+import axios from "axios";
+import { BASE_URL } from "../../../api/export";
+import { useState } from "react/cjs/react.development";
 
 export default function MyPage() {
+  const [post, setPost] = useState([]);
+
+  axios
+    .get(BASE_URL + "board/mypage?page=5")
+    .then((res) => {
+      setPost(res.data);
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   return (
     <>
       <Header />
@@ -32,14 +46,12 @@ export default function MyPage() {
           </div>
           <hr />
           <div className="post">
-            <div></div>
-            <div></div>
-            <div></div>
+            {post.map((item) => (
+              <div>{item}</div>
+            ))}
           </div>
-          {/* 다음에 맵 함수 할 것  */}
         </div>
       </S.MainDiv>
-      <Footer/>
     </>
   );
 }
