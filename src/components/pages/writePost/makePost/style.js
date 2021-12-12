@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const InputPanel = styled.div`
-  /* width: 1364px; */
-  /* height: 647px; */
   width: auto;
   height: auto;
   border: #707070 1px solid;
@@ -12,7 +10,6 @@ export const InputPanel = styled.div`
 export const Page = styled.main`
   display: grid;
   justify-items: center;
-  /* align-items: center; */
 `;
 
 export const Panel = styled.div`
@@ -39,6 +36,7 @@ export const LangSelect = styled.select`
   width: 258px;
   height: 48px;
   color: #324290;
+  transition: 0.3s ease-in;
   font-size: 18px;
   background-color: white;
   border: grey 1px solid;
@@ -122,7 +120,6 @@ export const Submit = styled.button`
 export const Preview = styled.div`
   width: 1340px;
   margin: 10px;
-  /* border: 1px black solid; */
 
   display: flex;
   flex-wrap: wrap;

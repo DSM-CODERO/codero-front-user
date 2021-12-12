@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { request } from '../../../../api/axios';
 import ImageView from './ImageView';
 import * as S from './style';
 
@@ -23,15 +24,18 @@ const WritePost = () => {
 
   const submit = () => {
     const title = titleRef.current.value;
-    const content = contentRef.current.value;
-    const language = languageRef.current.value;
+    const context = contentRef.current.value;
+    const filed = languageRef.current.value;
 
-    if (title && content) {
+    if (title && context) {
       const data = {
         title,
-        content,
-        language,
+        context,
+        filed,
       };
+
+      request('post', '/board', {}, data);
+
       console.table(data);
     } else {
       alert('제목과 내용을 모두 입력해주세요!!');
@@ -68,16 +72,17 @@ const WritePost = () => {
           <S.InputHeader>
             <S.TitleInput
               placeholder="제목을 입력해주세요"
-              maxLength="30"
+              maxLength="100"
+              spellCheck="false"
               ref={titleRef}
               onKeyUp={nextFocus}
             />
-            <S.LangSelect ref={languageRef}>
+            <S.LangSelect ref={languageRef} size="1">
               {languageList.map((language) => (
                 <option key={language}>{language}</option>
               ))}
             </S.LangSelect>
-            <S.AddFile for="input-file">파일첨부</S.AddFile>
+            <S.AddFile htmlFor="input-file">파일첨부</S.AddFile>
             <input
               style={{ display: 'none' }}
               onChange={chooseFile}
@@ -90,6 +95,7 @@ const WritePost = () => {
             ref={contentRef}
             spellCheck="false"
             placeholder="내용을 입력해주세요"
+            maxLength="1000"
           />
           <S.Preview>
             {fileUrl.map((img) => (
