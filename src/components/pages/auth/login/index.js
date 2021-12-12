@@ -23,19 +23,35 @@ export default function Login() {
   };
 
   const handleLoginBtn = () => {
-    console.log(value);
     const { email, password } = value;
+    const data = {
+      email: email,
+      password: password,
+    };
     axios
-      .post(BASE_URL + "auth/signin", {
-        email: email,
-        password: password,
-      })
-      .then((res) => {
-        console.log(res);
-      })
+      .post(BASE_URL + "auth/signin", data)
+      .then(onLoginSuccess)
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const onSilentRefresh = (accessToken) => {
+    axios
+      .post(BASE_URL + "auth/refreshtoken", {
+        refreshToken: accessToken,
+      })
+      .then(onLoginSuccess)
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const onLoginSuccess = (res) => {
+    const { accessToken } = res.data;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+
+    setTimeout(() => onSilentRefresh(accessToken), (24 * 3600 * 1000) - 60000);
   };
 
   return (
