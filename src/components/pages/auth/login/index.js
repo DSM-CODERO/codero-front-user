@@ -29,7 +29,7 @@ export default function Login() {
       password: password,
     };
     axios
-      .post(BASE_URL + "auth/signin", data)
+      .post(BASE_URL + "user/login", data)
       .then(onLoginSuccess)
       .catch((err) => {
         console.log(err);
