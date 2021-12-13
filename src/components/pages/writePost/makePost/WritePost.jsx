@@ -22,6 +22,9 @@ const WritePost = () => {
   const titleRef = useRef();
   const languageRef = useRef();
 
+  const [fileUrl, setFileUrl] = useState([]); // 이미지 값 저장
+  const imageNum = useRef(0); // 배열의 키 값으로 활용
+
   const submit = () => {
     const title = titleRef.current.value;
     const context = contentRef.current.value;
@@ -32,6 +35,7 @@ const WritePost = () => {
         title,
         context,
         filed,
+        image: fileUrl[0],
       };
 
       request('post', '/board', {}, data);
@@ -48,9 +52,6 @@ const WritePost = () => {
       contentRef.current.focus();
     }
   };
-
-  const [fileUrl, setFileUrl] = useState([]); // 이미지 값 저장
-  const imageNum = useRef(0); // 배열의 키 값으로 활용
 
   const chooseFile = (e) => {
     const imageFile = e.target.files[0];

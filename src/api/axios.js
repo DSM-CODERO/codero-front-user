@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = `http://13.209.80.53`;
+const BASE_URL = `http://54.180.158.164`;
 
 export const request = (method, url, headers, data) => {
   console.log('request call');
@@ -11,7 +11,7 @@ export const request = (method, url, headers, data) => {
       url: BASE_URL + url,
       headers: {
         ...headers,
-        Authorization: localStorage.getItem('token'),
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
       data,
     })
