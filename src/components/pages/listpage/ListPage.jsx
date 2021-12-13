@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import pen from "../../../assets/pen.png";
 import * as s from "./style";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://54.180.158.164";
 
 function ListPage() {
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/board/allview?page=1")
+      .then((res) => {
+        setInfo(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log("info", info);
   return (
     <s.List>
       <s.ListHead>
@@ -19,18 +37,13 @@ function ListPage() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <s.ListTd>오류 해결하는 방법 알려주세요</s.ListTd>
-              <s.ListTd>JAVA</s.ListTd>
-              <s.ListTd>전영준</s.ListTd>
-              <s.ListTd>2021.11.09</s.ListTd>
-            </tr>
-            <tr>
-              <s.ListTd></s.ListTd>
-              <s.ListTd></s.ListTd>
-              <s.ListTd></s.ListTd>
-              <s.ListTd></s.ListTd>
-            </tr>
+            {info.map((item, index) => (
+              <tr>
+                <s.ListTd>{item.title}</s.ListTd>
+                <s.ListTd>{item.filed}</s.ListTd>
+                <s.ListTd>{item.username}</s.ListTd>
+              </tr>
+            ))}
           </tbody>
         </s.ListTable>
       </s.ListBody>
