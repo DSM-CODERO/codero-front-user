@@ -27,7 +27,6 @@ export default function SignUp() {
       .get(`http://13.125.215.87/email`, { params })
       .then((res) => {
         setValue({ ...value, authenticationCheck: res.data });
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -35,7 +34,6 @@ export default function SignUp() {
   }
 
   const handleClickHidePassword = (props) => () => {
-    console.log(props);
     if (props === "hidePassword") {
       setValue({ ...value, hidePassword: !value.hidePassword });
     } else {
@@ -65,7 +63,7 @@ export default function SignUp() {
             password: password,
           })
           .then((res) => {
-            console.log(res);
+            alert(res.data);
           })
           .catch((error) => console.log(error));
       } else {
