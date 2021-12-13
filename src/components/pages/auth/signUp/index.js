@@ -24,7 +24,7 @@ export default function SignUp() {
       email: value.email,
     };
     await axios
-      .get(`${BASE_URL}email`, { params })
+      .get(`http://13.125.215.87/email`, { params })
       .then((res) => {
         setValue({ ...value, authenticationCheck: res.data });
         console.log(res.data);
@@ -59,7 +59,7 @@ export default function SignUp() {
     if (authentication === authenticationCheck) {
       if (password === passwordCheck) {
         axios
-          .post(BASE_URL + "auth/signup", {
+          .post(BASE_URL + "user", {
             username: nickname,
             email: email,
             password: password,
