@@ -36,22 +36,10 @@ export default function Login() {
       });
   };
 
-  const onSilentRefresh = (accessToken) => {
-    axios
-      .post(BASE_URL + "auth/refreshtoken", {
-        refreshToken: accessToken,
-      })
-      .then(onLoginSuccess)
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   const onLoginSuccess = (res) => {
     const { accessToken } = res.data;
+    localStorage.setItem("Authorization", accessToken);
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-
-    setTimeout(() => onSilentRefresh(accessToken), (24 * 3600 * 1000) - 60000);
   };
 
   return (
