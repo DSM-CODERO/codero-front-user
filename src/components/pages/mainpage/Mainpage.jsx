@@ -23,7 +23,7 @@ function Mainpage() {
   }, []);
 
   console.log(info);
-  let arr_slice1 = info.slice(0, 1);
+  let arr_slice1 = info.slice(0, 2);
 
   console.log(arr_slice1);
 
@@ -33,16 +33,17 @@ function Mainpage() {
         <s.Board>
           <s.BoardList>
             <s.BoardHead>댓글이 없는 게시물</s.BoardHead>
-            <s.BoardProduct>
-              <s.ProductTitle>{arr_slice1.title}</s.ProductTitle>
-              <s.ProductText>{arr_slice1.context}</s.ProductText>
-              <s.ProdcutField>{arr_slice1.filed}</s.ProdcutField>
-            </s.BoardProduct>
-            <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
-            </s.BoardProduct>
+            {arr_slice1.map((props, i) => {
+              return props.title ? (
+                <s.BoardProduct key={i}>
+                  <s.ProductTitle>{props.title}</s.ProductTitle>
+                  <s.ProductText>{props.context}</s.ProductText>
+                  <s.ProdcutField>{props.filed}</s.ProdcutField>
+                </s.BoardProduct>
+              ) : (
+                <s.BoardProduct></s.BoardProduct>
+              );
+            })}
           </s.BoardList>
           <s.BoardList>
             <s.BoardHead>인기게시물</s.BoardHead>
