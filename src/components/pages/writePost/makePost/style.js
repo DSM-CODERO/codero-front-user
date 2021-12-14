@@ -99,6 +99,11 @@ export const Title = styled.label`
   font-weight: bold;
 `;
 
+export const BtnBar = styled.div`
+  justify-self: right;
+  justify-items: right;
+`;
+
 export const Submit = styled.button`
   width: 260px;
   height: 62px;
@@ -109,12 +114,16 @@ export const Submit = styled.button`
 
   border: 0.1px #2e3c7e solid;
   border-radius: 15px;
-  margin-top: 41px;
-
-  justify-self: right;
+  margin-top: 40px;
 
   font-family: 'Noto Sans KR';
   font-weight: 500;
+`;
+
+export const Delete = styled(Submit)`
+  background-color: #f54b4c;
+  border: 0.1px #f54b4c solid;
+  margin-right: 20px;
 `;
 
 export const Preview = styled.div`

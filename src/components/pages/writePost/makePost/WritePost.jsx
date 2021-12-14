@@ -38,7 +38,24 @@ const WritePost = () => {
         image: fileUrl[0],
       };
 
-      request('post', '/board', {}, data);
+      titleRef.current.value = '';
+      contentRef.current.value = '';
+      setFileUrl([]);
+      // languageRef.current.value(null);
+
+      request('post', '/board', {}, data)
+        .then((res) => {
+          alert(`게시물이 작성되었습니다`);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .then((e) => {
+          titleRef.current.value = '';
+          contentRef.current.value = '';
+          setFileUrl([]);
+          // languageRef.current.value('C');
+        });
 
       console.table(data);
     } else {
@@ -109,7 +126,9 @@ const WritePost = () => {
             ))}
           </S.Preview>
         </S.InputPanel>
-        <S.Submit onClick={submit}>게시물 등록</S.Submit>
+        <S.BtnBar>
+          <S.Submit onClick={submit}>게시물 등록</S.Submit>
+        </S.BtnBar>
       </S.Panel>
     </S.Page>
   );
