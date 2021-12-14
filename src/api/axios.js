@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// const BASE_URL = `http://54.180.158.164`;
 axios.defaults.baseURL = 'http://54.180.158.164';
 
-export const request = (method, url, headers, data) => {
+export const requestWithToken = (method, url, data) => {
   console.log('request call');
 
   return axios
@@ -11,7 +10,6 @@ export const request = (method, url, headers, data) => {
       method,
       url,
       headers: {
-        ...headers,
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
       data,
