@@ -7,16 +7,25 @@ import ios from "../../../assets/apple.png";
 import * as s from "./style";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://13.209.80.53";
+axios.defaults.baseURL = "http://54.180.158.164";
 
 function Mainpage() {
+  const [info, setInfo] = useState([]);
   useEffect(() => {
-    axios.get("/board/allview?page=").then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .get("/board/allview?page=1")
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
-  const [viewContent, SetViewContent] = useState();
+  console.log(info);
+  let arr_slice1 = info.slice(0, 1);
+
+  console.log(arr_slice1);
 
   return (
     <s.Main>
@@ -25,9 +34,9 @@ function Mainpage() {
           <s.BoardList>
             <s.BoardHead>댓글이 없는 게시물</s.BoardHead>
             <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
+              <s.ProductTitle>{arr_slice1.title}</s.ProductTitle>
+              <s.ProductText>{arr_slice1.context}</s.ProductText>
+              <s.ProdcutField>{arr_slice1.filed}</s.ProdcutField>
             </s.BoardProduct>
             <s.BoardProduct>
               <s.ProductTitle>제목</s.ProductTitle>
