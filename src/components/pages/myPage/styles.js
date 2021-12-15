@@ -1,23 +1,17 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
-  margin-top: 0px;
-  width: 100% auto;
-  height: 55px;
-  background-color: black;
-`;
-
 export const MainDiv = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap");
+  margin-bottom: 76px;
   .title {
     margin-left: 278px;
     margin-right: 183px;
-    margin-top: 52px;
+    margin-top: 36px;
     margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     font-family: "Anton", sans-serif;
-    font-size: 24px;
+    font-size: 27px;
     font-weight: bold;
     color: #324290;
     img {
@@ -26,9 +20,11 @@ export const MainDiv = styled.div`
     }
   }
   hr {
+    border: 0;
     margin-left: 278px;
     width: 1067px;
     height: 1px;
+    background-color: #707070;
   }
   .profile {
     display: inline-flex;
@@ -40,8 +36,36 @@ export const MainDiv = styled.div`
       height: 107px;
       margin-right: 34px;
     }
+    .information {
+      font-size: 20px;
+      color: #707070;
+      .user {
+        font-size: 26px;
+        color: #000000;
+      }
+    }
   }
-  .post {
-      margin-top: 71px;
+  .mainPost {
+    margin-top: 61px;
+    margin-left: 278px;
+    .goodPost {
+      margin-left: 38px;
+    }
+    hr {
+      height: 0.1px;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+    .post {
+      width: 1067px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-row-gap: 30px;
+      div {
+        width: 174px;
+        height: 211px;
+        border: 1px #707070 solid;
+      }
+    }
   }
 `;
