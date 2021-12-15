@@ -1,6 +1,8 @@
 import * as S from './style';
 import patchBtn from '../../../assets/img/patchBtn.svg';
 import del from '../../../assets/img/del.svg';
+import { useEffect, useState } from 'react';
+import { requestWithToken } from '../../../api/axios';
 
 const ShowPost = () => {
   const text = {
@@ -32,14 +34,21 @@ const ShowPost = () => {
     `,
     language: 'C/C++',
   };
+  const [boardData, setBoardData] = useState({});
+
+  useEffect(() => {
+    requestWithToken('get', `board/oneview/17`, {}).then((res) => {
+      setBoardData(res);
+    });
+  }, []);
   return (
     <div>
       <S.ContentHeader>
         <S.TitleBar>
-          <S.TopTitle>{text.title}</S.TopTitle>
-          <S.Language>{text.language}</S.Language>
+          <S.TopTitle>{boardData.title}</S.TopTitle>
+          <S.Language>{boardData.filed}</S.Language>
         </S.TitleBar>
-        <S.Writer>{text.writer}</S.Writer>
+        <S.Writer>{boardData.username}</S.Writer>
       </S.ContentHeader>
       <S.Post>
         <S.BtnBar>
@@ -53,7 +62,7 @@ const ShowPost = () => {
           </S.Button>
         </S.BtnBar>
         <S.Title>게시글</S.Title>
-        <S.PostText>{text.content}</S.PostText>
+        <S.PostText>{boardData.context}</S.PostText>
       </S.Post>
     </div>
   );
