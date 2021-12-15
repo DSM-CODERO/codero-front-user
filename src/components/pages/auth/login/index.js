@@ -3,7 +3,8 @@ import * as S from "./styles";
 import logoImg from "../../../../assets/img/logo.png";
 import eyeImg from "../../../../assets/img/eye.png";
 import hideImg from "../../../../assets/img/hide.png";
-import Footer from "../../../common/footer";
+import axios from "axios";
+import { BASE_URL } from "../../../../api/export";
 
 export default function Login() {
   const [value, setValue] = useState({
@@ -19,6 +20,26 @@ export default function Login() {
   const handleInputChange = (props) => (e) => {
     setValue({ ...value, [props]: e.target.value });
     console.log(value);
+  };
+
+  const handleLoginBtn = () => {
+    const { email, password } = value;
+    const data = {
+      email: email,
+      password: password,
+    };
+    axios
+      .post(BASE_URL + "user/login", data)
+      .then(onLoginSuccess)
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const onLoginSuccess = (res) => {
+    const { accessToken } = res.data;
+    localStorage.setItem("Authorization", accessToken);
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
   };
 
   return (
@@ -56,12 +77,11 @@ export default function Login() {
               alt=""
             />
           </div>
-          <div className="loginBtn">
-            <span>로그인</span>
+          <div className="loginBtn" onClick={handleLoginBtn}>
+            로그인
           </div>
         </div>
       </S.MainDiv>
-      <Footer />
     </>
   );
 }

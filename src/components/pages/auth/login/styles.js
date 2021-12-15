@@ -91,9 +91,7 @@ export const MainDiv = styled.div`
       align-items: center;
       margin-top: 43px;
       cursor: pointer;
-      span {
-        color: white;
-      }
+      color: white;
     }
     .email {
       margin-top: 67px;
