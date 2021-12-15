@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://54.180.158.164';
+axios.defaults.baseURL = 'http://13.125.220.4:4000/';
 
 export const requestWithToken = (method, url, data) => {
   console.log('request call');
