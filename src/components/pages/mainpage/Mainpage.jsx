@@ -7,7 +7,7 @@ import ios from "../../../assets/apple.png";
 import * as s from "./style";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://54.180.158.164";
+axios.defaults.baseURL = "http://13.125.220.4:4000/";
 
 function Mainpage() {
   const [info, setInfo] = useState([]);
@@ -24,6 +24,8 @@ function Mainpage() {
 
   console.log(info);
   let arr_slice1 = info.slice(0, 2);
+  let arr_slice2 = info.slice(2, 4);
+  let arr_slice3 = info.slice(4, 6);
 
   console.log(arr_slice1);
 
@@ -35,41 +37,58 @@ function Mainpage() {
             <s.BoardHead>댓글이 없는 게시물</s.BoardHead>
             {arr_slice1.map((props, i) => {
               return props.title ? (
-                <s.BoardProduct key={i}>
-                  <s.ProductTitle>{props.title}</s.ProductTitle>
-                  <s.ProductText>{props.context}</s.ProductText>
-                  <s.ProdcutField>{props.filed}</s.ProdcutField>
-                </s.BoardProduct>
+                <Link
+                  to={`${props.board_id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <s.BoardProduct key={i}>
+                    <s.ProductTitle>{props.title}</s.ProductTitle>
+                    <s.ProductText>{props.context}</s.ProductText>
+                    <s.ProdcutField>{props.filed}</s.ProdcutField>
+                  </s.BoardProduct>
+                </Link>
               ) : (
                 <s.BoardProduct></s.BoardProduct>
               );
             })}
           </s.BoardList>
           <s.BoardList>
-            <s.BoardHead>인기게시물</s.BoardHead>
-            <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
-            </s.BoardProduct>
-            <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
-            </s.BoardProduct>
+            <s.BoardHead>인기 게시물</s.BoardHead>
+            {arr_slice2.map((props, i) => {
+              return props.title ? (
+                <Link
+                  to={`${props.board_id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <s.BoardProduct key={i}>
+                    <s.ProductTitle>{props.title}</s.ProductTitle>
+                    <s.ProductText>{props.context}</s.ProductText>
+                    <s.ProdcutField>{props.filed}</s.ProdcutField>
+                  </s.BoardProduct>
+                </Link>
+              ) : (
+                <s.BoardProduct></s.BoardProduct>
+              );
+            })}
           </s.BoardList>
           <s.BoardList>
-            <s.BoardHead>최근게시물</s.BoardHead>
-            <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
-            </s.BoardProduct>
-            <s.BoardProduct>
-              <s.ProductTitle>제목</s.ProductTitle>
-              <s.ProductText>내용</s.ProductText>
-              <s.ProdcutField>분야</s.ProdcutField>
-            </s.BoardProduct>
+            <s.BoardHead>최근 게시물</s.BoardHead>
+            {arr_slice3.map((props, i) => {
+              return props.title ? (
+                <Link
+                  to={`${props.board_id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <s.BoardProduct key={i}>
+                    <s.ProductTitle>{props.title}</s.ProductTitle>
+                    <s.ProductText>{props.context}</s.ProductText>
+                    <s.ProdcutField>{props.filed}</s.ProdcutField>
+                  </s.BoardProduct>
+                </Link>
+              ) : (
+                <s.BoardProduct></s.BoardProduct>
+              );
+            })}
           </s.BoardList>
         </s.Board>
       </s.Flex>
