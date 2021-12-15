@@ -39,9 +39,11 @@ export const ListTh = styled.th`
 
 export const ListTd = styled.td`
   border-bottom: 1px solid #444444;
+  width: 120px;
   height: 25px;
   padding: 10px;
   text-align: center;
+  word-break: break-all;
 `;
 
 export const BtnDiv = styled.div`

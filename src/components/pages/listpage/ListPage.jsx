@@ -4,7 +4,7 @@ import pen from "../../../assets/pen.png";
 import * as s from "./style";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://54.180.158.164";
+axios.defaults.baseURL = "http://13.125.220.4:4000/";
 
 function ListPage() {
   const [info, setInfo] = useState([]);
@@ -20,7 +20,8 @@ function ListPage() {
         console.log(err);
       });
   }, []);
-  console.log("info", info);
+  console.log(info);
+
   return (
     <s.List>
       <s.ListHead>
@@ -39,9 +40,17 @@ function ListPage() {
           <tbody>
             {info.map((item, index) => (
               <tr>
-                <s.ListTd>{item.title}</s.ListTd>
+                <s.ListTd>
+                  <Link
+                    to={`${item.board_id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    {item.title}
+                  </Link>
+                </s.ListTd>
                 <s.ListTd>{item.filed}</s.ListTd>
                 <s.ListTd>{item.username}</s.ListTd>
+                <s.ListTd>{item.created_at}</s.ListTd>
               </tr>
             ))}
           </tbody>
