@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { request } from '../../../../api/axios';
+import { requestWithToken } from '../../../../api/axios';
 import ImageView from '../makePost/ImageView';
 import * as S from '../makePost/style';
 
@@ -27,13 +27,11 @@ const PatchPost = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    request('get', 'board/oneview/22', {})
-      .then((res) => {
-        setData(res);
-        console.table(data);
-      })
-      .catch((err) => console.log(err));
-  }, [data]);
+    requestWithToken('get', 'board/oneview/10', {}).then((res) => {
+      setData(res);
+      console.table(data);
+    });
+  }, []);
 
   const { title, context, filed, board_id } = data;
 
@@ -45,7 +43,7 @@ const PatchPost = () => {
         filed,
       };
 
-      request('patch', `board/${board_id}`, {}, data);
+      requestWithToken('patch', `board/${board_id}`, data);
     } else {
       alert('제목과 내용을 모두 입력해주세요!!');
     }
@@ -79,7 +77,7 @@ const PatchPost = () => {
   };
 
   const del = () => {
-    request('delete', `board/${board_id}`, {}, {});
+    requestWithToken('delete', `board/${board_id}`, {}, {});
   };
 
   return (
