@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { request } from '../../../../api/axios';
+import { requestWithToken } from '../../../../api/axios';
 import ImageView from './ImageView';
 import * as S from './style';
 
@@ -37,13 +37,9 @@ const WritePost = () => {
         filed,
         image: fileUrl[0],
       };
-
-      titleRef.current.value = '';
-      contentRef.current.value = '';
-      setFileUrl([]);
       // languageRef.current.value(null);
 
-      request('post', '/board', {}, data)
+      requestWithToken('post', 'board', data)
         .then((res) => {
           alert(`게시물이 작성되었습니다`);
         })
