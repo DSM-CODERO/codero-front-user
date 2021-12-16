@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const InputPanel = styled.div`
-  width: auto;
+  width: 1200px;
   height: auto;
   border: #707070 1px solid;
   border-radius: 15px;
@@ -15,6 +15,7 @@ export const Page = styled.main`
 export const Panel = styled.div`
   width: auto;
   display: grid;
+  margin-top: 70px;
 `;
 
 export const Btn = styled.button`
@@ -48,10 +49,11 @@ export const LangSelect = styled.select`
 `;
 
 export const TitleInput = styled.input`
-  width: 850px;
+  width: 500px;
   height: 70px;
   border: none;
-  font-size: 35px;
+  margin-right: 100px;
+  font-size: 20px;
   color: #324290;
   font-family: 'Noto Sans KR';
   font-weight: normal;
@@ -75,7 +77,7 @@ export const AddFile = styled.label`
 `;
 
 export const PostInput = styled.textarea`
-  width: 1320px;
+  width: 700px;
   height: 500px;
   border-radius: 0 0 15px 15px;
 
@@ -91,7 +93,7 @@ export const PostInput = styled.textarea`
 `;
 
 export const Title = styled.label`
-  font-size: 36px;
+  font-size: 30px;
   color: #324290;
   margin-bottom: 48px;
 
