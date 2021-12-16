@@ -53,10 +53,13 @@ export const TitleInput = styled.input`
   height: 70px;
   border: none;
   margin-right: 100px;
-  font-size: 20px;
+  font-size: 30px;
   color: #324290;
   font-family: 'Noto Sans KR';
   font-weight: normal;
+
+  justify-self: left;
+  margin-left: 20px;
 `;
 
 export const AddFile = styled.label`
@@ -120,6 +123,10 @@ export const Submit = styled.button`
 
   font-family: 'Noto Sans KR';
   font-weight: 500;
+
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export const Delete = styled(Submit)`
