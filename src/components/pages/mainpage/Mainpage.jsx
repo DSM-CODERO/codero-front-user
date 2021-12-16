@@ -96,25 +96,25 @@ function Mainpage() {
           </s.Board>
         </s.Flex>
         <s.Belt>
-          <Link to="/Front" style={{ textDecoration: 'none' }}>
+          <Link to="/list/Front" style={{ textDecoration: 'none' }}>
             <s.List>
               <s.ListImg src={Front} alt="logo" />
               Front
             </s.List>
           </Link>
-          <Link to="/Back" style={{ textDecoration: 'none' }}>
+          <Link to="/list/Back" style={{ textDecoration: 'none' }}>
             <s.List>
               <s.ListImg src={Back} alt="logo" />
               Back
             </s.List>
           </Link>
-          <Link to="/Android" style={{ textDecoration: 'none' }}>
+          <Link to="/list/Android" style={{ textDecoration: 'none' }}>
             <s.List>
               <s.ListImg src={Android} alt="logo" />
               Android
             </s.List>
           </Link>
-          <Link to="/IOS" style={{ textDecoration: 'none' }}>
+          <Link to="/list/IOS" style={{ textDecoration: 'none' }}>
             <s.List>
               <s.ListImg src={ios} alt="logo" />
               IOS
