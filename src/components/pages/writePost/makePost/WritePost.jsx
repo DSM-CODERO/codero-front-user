@@ -34,7 +34,6 @@ const WritePost = () => {
         filed,
         image: fileUrl[0],
       };
-      // languageRef.current.value(null);
 
       requestWithToken('post', 'board', data)
         .then((res) => {
@@ -47,7 +46,6 @@ const WritePost = () => {
           titleRef.current.value = '';
           contentRef.current.value = '';
           setFileUrl([]);
-          // languageRef.current.value('C');
         });
 
       console.table(data);
