@@ -7,7 +7,7 @@ export default function Footer() {
     <S.FooterDiv>
       <div className="container">
         <span>
-          <img className="logo" src={logoImg} alt="" />
+          <img className="logo" src={logoImg} alt="logo" />
         </span>
         <span>
           <div className="role">Front</div>

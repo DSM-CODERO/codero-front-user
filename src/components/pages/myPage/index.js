@@ -27,38 +27,61 @@ export default function MyPage() {
     navigate('/writepost');
   };
 
+  const loginHistory = () => {
+    navigate('/login');
+  };
+
+  const signHistory = () => {
+    navigate('/signup');
+  };
+
   return (
     <>
-      <Header />
-      <S.MainDiv>
-        <div className="title">
-          <span>마이페이지</span>
-          <span>
-            <img src={editImg} alt="" onClick={writeHistory} />
-          </span>
-        </div>
-        <hr />
-        <div className="profile">
-          <img src={profileImg} alt="" />
-          <span className="information">
-            <div className="user">USER 님</div>
-            <div>id123</div>
-            <div>user@gmail.com</div>
-          </span>
-        </div>
-        <div className="mainPost">
-          <div>
-            <span className="writePost">내가 작성한 게시물</span>
-            <span className="goodPost">좋아요한 게시물</span>
-          </div>
-          <hr />
-          <div className="post">
-            {post.map((item) => (
-              <div>{item}</div>
-            ))}
-          </div>
-        </div>
-      </S.MainDiv>
+      {localStorage.getItem('accessToken') ? (
+        <>
+          <Header />
+          <S.MainDiv>
+            <div className="title">
+              <span>마이페이지</span>
+              <span>
+                <img src={editImg} alt="" onClick={writeHistory} />
+              </span>
+            </div>
+            <hr />
+            <div className="profile">
+              <img src={profileImg} alt="" />
+              <span className="information">
+                <div className="user">USER 님</div>
+                <div>id123</div>
+                <div>user@gmail.com</div>
+              </span>
+            </div>
+            <div className="mainPost">
+              <div>
+                <span className="writePost">내가 작성한 게시물</span>
+                <span className="goodPost">좋아요한 게시물</span>
+              </div>
+              <hr />
+              <div className="post">
+                {post.map((item) => (
+                  <div>{item}</div>
+                ))}
+              </div>
+            </div>
+          </S.MainDiv>
+        </>
+      ) : (
+        <>
+          <Header />
+          <S.AuthHead>
+            <S.H2>로그인 및 회원가입을 해주세요</S.H2>
+          </S.AuthHead>
+          <S.MypageAuth>
+            <S.LoginBtn type="button" value="로그인" onClick={loginHistory} />
+            <S.SignBtn type="button" value="회원가입" onClick={signHistory} />
+          </S.MypageAuth>
+        </>
+      )}
     </>
   );
 }

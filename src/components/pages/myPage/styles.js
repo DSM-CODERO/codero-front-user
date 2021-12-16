@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap');
   margin-bottom: 76px;
   .title {
     margin-left: 278px;
@@ -10,7 +10,7 @@ export const MainDiv = styled.div`
     margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
-    font-family: "Anton", sans-serif;
+    font-family: 'Anton', sans-serif;
     font-size: 27px;
     font-weight: bold;
     color: #324290;
@@ -68,4 +68,37 @@ export const MainDiv = styled.div`
       }
     }
   }
+`;
+
+export const MypageAuth = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AuthHead = styled.div`
+  margin-top: 220px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const H2 = styled.h2``;
+
+export const LoginBtn = styled.input`
+  width: 150px;
+  height: 50px;
+  margin-right: 50px;
+  border: 1px solid #324290;
+  background-color: #324290;
+  color: white;
+  cursor: pointer;
+`;
+
+export const SignBtn = styled.input`
+  width: 150px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
 `;

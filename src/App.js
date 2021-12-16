@@ -6,13 +6,8 @@ import MyPage from './components/pages/myPage/index';
 import MainPage from './components/pages/mainpage/Mainpage';
 import WritePost from './components/pages/writePost/makePost/WritePost';
 import PatchPost from './components/pages/writePost/putchPost/PatchPost';
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 import Footer from './components/common/footer';
-=======
->>>>>>> signUp
->>>>>>> Stashed changes
+
 
 function App() {
   return (
