@@ -8,6 +8,7 @@ import axios from 'axios';
 import { BASE_URL } from '../../../../api/export';
 
 export default function Login() {
+
   const [value, setValue] = useState({
     email: '',
     password: '',
@@ -51,7 +52,6 @@ export default function Login() {
 
   const mainHistory = () => {
     navigate('/');
-    console.log('1');
   };
 
   return (
