@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+<<<<<<< Updated upstream
 import { useNavigate } from 'react-router-dom';
+=======
+<<<<<<< HEAD
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> signUp
+>>>>>>> Stashed changes
 import * as S from './styles';
 import logoImg from '../../../../assets/img/logo.png';
 import eyeImg from '../../../../assets/img/eye.png';
@@ -31,7 +38,13 @@ export default function SignUp() {
         console.log(err);
       });
   }
+<<<<<<< HEAD
+=======
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> signUp
+>>>>>>> Stashed changes
   const handleClickHidePassword = (props) => () => {
     console.log(props);
 
@@ -55,7 +68,7 @@ export default function SignUp() {
       authentication,
       authenticationCheck,
     } = value;
-    if ("success" + authentication === authenticationCheck) {
+    if ('success' + authentication === authenticationCheck) {
       if (password === passwordCheck) {
         axios
           .post(BASE_URL + 'user', {
@@ -64,14 +77,14 @@ export default function SignUp() {
             password: password,
           })
           .then((res) => {
-            alert("회원가입 성공!")
+            alert('회원가입 성공!');
           })
           .catch((error) => console.log(error));
       } else {
         alert('비밀번호가 동일하지 않습니다!');
       }
     } else {
-      alert("인증번호가 올바르지 않습니다!");
+      alert('인증번호가 올바르지 않습니다!');
     }
     console.log(value);
   };
@@ -155,6 +168,7 @@ export default function SignUp() {
             className="nickname"
             placeholder="닉네임"
           />
+          <input type="submit" />
           <div className="signUpBtn" onClick={submitSignup}>
             <span>회원가입</span>
           </div>
