@@ -8,6 +8,7 @@ import WritePost from './components/pages/writePost/makePost/WritePost';
 import PatchPost from './components/pages/writePost/putchPost/PatchPost';
 import Footer from './components/common/footer';
 
+
 function App() {
   return (
     <BrowserRouter>
