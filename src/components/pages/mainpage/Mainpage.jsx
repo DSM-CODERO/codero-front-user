@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../header/Header';
 import Front from '../../../assets/js.png';
 import Back from '../../../assets/java.png';
 import Android from '../../../assets/android.png';
@@ -30,80 +31,98 @@ function Mainpage() {
   console.log(arr_slice1);
 
   return (
-    <s.Main>
-      <s.Flex>
-        <s.Board>
-          <s.BoardList>
-            <s.BoardHead>댓글이 없는 게시물</s.BoardHead>
-            {arr_slice1.map((props, i) => {
-              return props.title ? (
-                <Link
-                  to={`${props.board_id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <s.BoardProduct key={i}>
-                    <s.ProductTitle>{props.title}</s.ProductTitle>
-                    <s.ProductText>{props.context}</s.ProductText>
-                    <s.ProdcutField>{props.filed}</s.ProdcutField>
-                  </s.BoardProduct>
-                </Link>
-              ) : (
-                <s.BoardProduct></s.BoardProduct>
-              );
-            })}
-          </s.BoardList>
-          <s.BoardList>
-            <s.BoardHead>인기 게시물</s.BoardHead>
-            {arr_slice2.map((props, i) => {
-              return props.title ? (
-                <Link
-                  to={`${props.board_id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <s.BoardProduct key={i}>
-                    <s.ProductTitle>{props.title}</s.ProductTitle>
-                    <s.ProductText>{props.context}</s.ProductText>
-                    <s.ProdcutField>{props.filed}</s.ProdcutField>
-                  </s.BoardProduct>
-                </Link>
-              ) : (
-                <s.BoardProduct></s.BoardProduct>
-              );
-            })}
-          </s.BoardList>
-          <s.BoardList>
-            <s.BoardHead>최근 게시물</s.BoardHead>
-            {arr_slice3.map((props, i) => {
-              return props.title ? (
-                <Link
-                  to={`${props.board_id}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <s.BoardProduct key={i}>
-                    <s.ProductTitle>{props.title}</s.ProductTitle>
-                    <s.ProductText>{props.context}</s.ProductText>
-                    <s.ProdcutField>{props.filed}</s.ProdcutField>
-                  </s.BoardProduct>
-                </Link>
-              ) : (
-                <s.BoardProduct></s.BoardProduct>
-              );
-            })}
-          </s.BoardList>
-        </s.Board>
-      </s.Flex>
-      <s.Belt>
-        <Link to="/Front" style={{ textDecoration: 'none' }}></Link>
-        <Link to="/Back" style={{ textDecoration: 'none' }}></Link>
-        <Link to="/Android" style={{ textDecoration: 'none' }}></Link>
-        <Link to="/IOS" style={{ textDecoration: 'none' }}>
-          <s.List>
-            <s.ListImg src={ios} alt="logo" />
-            IOS
-          </s.List>
-        </Link>
-      </s.Belt>
-    </s.Main>
+    <>
+      <Header />
+      <s.Main>
+        <s.Flex>
+          <s.Board>
+            <s.BoardList>
+              <s.BoardHead>댓글이 없는 게시물</s.BoardHead>
+              {arr_slice1.map((props, i) => {
+                return props.title ? (
+                  <Link
+                    to={`${props.board_id}`}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <s.BoardProduct key={i}>
+                      <s.ProductTitle>{props.title}</s.ProductTitle>
+                      <s.ProductText>{props.context}</s.ProductText>
+                      <s.ProdcutField>{props.filed}</s.ProdcutField>
+                    </s.BoardProduct>
+                  </Link>
+                ) : (
+                  <s.BoardProduct></s.BoardProduct>
+                );
+              })}
+            </s.BoardList>
+            <s.BoardList>
+              <s.BoardHead>인기 게시물</s.BoardHead>
+              {arr_slice2.map((props, i) => {
+                return props.title ? (
+                  <Link
+                    to={`${props.board_id}`}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <s.BoardProduct key={i}>
+                      <s.ProductTitle>{props.title}</s.ProductTitle>
+                      <s.ProductText>{props.context}</s.ProductText>
+                      <s.ProdcutField>{props.filed}</s.ProdcutField>
+                    </s.BoardProduct>
+                  </Link>
+                ) : (
+                  <s.BoardProduct></s.BoardProduct>
+                );
+              })}
+            </s.BoardList>
+            <s.BoardList>
+              <s.BoardHead>최근 게시물</s.BoardHead>
+              {arr_slice3.map((props, i) => {
+                return props.title ? (
+                  <Link
+                    to={`${props.board_id}`}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <s.BoardProduct key={i}>
+                      <s.ProductTitle>{props.title}</s.ProductTitle>
+                      <s.ProductText>{props.context}</s.ProductText>
+                      <s.ProdcutField>{props.filed}</s.ProdcutField>
+                    </s.BoardProduct>
+                  </Link>
+                ) : (
+                  <s.BoardProduct></s.BoardProduct>
+                );
+              })}
+            </s.BoardList>
+          </s.Board>
+        </s.Flex>
+        <s.Belt>
+          <Link to="/Front" style={{ textDecoration: 'none' }}>
+            <s.List>
+              <s.ListImg src={Front} alt="logo" />
+              Front
+            </s.List>
+          </Link>
+          <Link to="/Back" style={{ textDecoration: 'none' }}>
+            <s.List>
+              <s.ListImg src={Back} alt="logo" />
+              Back
+            </s.List>
+          </Link>
+          <Link to="/Android" style={{ textDecoration: 'none' }}>
+            <s.List>
+              <s.ListImg src={Android} alt="logo" />
+              Android
+            </s.List>
+          </Link>
+          <Link to="/IOS" style={{ textDecoration: 'none' }}>
+            <s.List>
+              <s.ListImg src={ios} alt="logo" />
+              IOS
+            </s.List>
+          </Link>
+        </s.Belt>
+      </s.Main>
+    </>
   );
 }
 export default Mainpage;
