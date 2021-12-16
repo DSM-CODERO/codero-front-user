@@ -20,13 +20,22 @@ export default function MyPage() {
       console.log(err);
     });
 
+  axios
+    .get(BASE_URL + "user/mypage")
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   return (
     <>
       <Header />
       <S.MainDiv>
         <div className="title">
           <span>마이페이지</span>
-          <span>
+          <span className="writePost">
             <img src={editImg} alt="" />
           </span>
         </div>
