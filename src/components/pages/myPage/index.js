@@ -1,17 +1,18 @@
-import React from "react";
-import * as S from "./styles";
-import editImg from "../../../assets/img/edit.png";
-import profileImg from "../../../assets/img/profile-user.png";
-import Header from "../header/Header";
-import axios from "axios";
-import { BASE_URL } from "../../../api/export";
-import { useState } from "react/cjs/react.development";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../header/Header';
+import * as S from './styles';
+import editImg from '../../../assets/img/edit.png';
+import profileImg from '../../../assets/img/profile-user.png';
+import axios from 'axios';
+import { BASE_URL } from '../../../api/export';
+import { useState } from 'react/cjs/react.development';
 
 export default function MyPage() {
   const [post, setPost] = useState([]);
 
   axios
-    .get(BASE_URL + "board/mypage?page=5")
+    .get(BASE_URL + 'board/mypage?page=5')
     .then((res) => {
       setPost(res.data);
       console.log(res.data);
@@ -20,6 +21,12 @@ export default function MyPage() {
       console.log(err);
     });
 
+  const navigate = useNavigate();
+
+  const writeHistory = () => {
+    navigate('/writepost');
+  };
+
   return (
     <>
       <Header />
@@ -27,7 +34,7 @@ export default function MyPage() {
         <div className="title">
           <span>마이페이지</span>
           <span>
-            <img src={editImg} alt="" />
+            <img src={editImg} alt="" onClick={writeHistory} />
           </span>
         </div>
         <hr />
