@@ -1,15 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
-import mark from "../../../assets/mark.png";
-import doc from "../../../assets/doc.png";
-import * as s from "./style";
+import React from 'react';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import mark from '../../../assets/mark.png';
+import doc from '../../../assets/doc.png';
+import * as s from './style';
 
 function Header() {
   const navigate = useNavigate();
 
   const onClickMain = () => {
-    navigate("/");
+    navigate('/');
   };
 
   return (
@@ -22,25 +22,25 @@ function Header() {
           <s.Dropdown>
             MENU
             <s.Dropcontent>
-              <Link to="/Front" style={{ textDecoration: "none" }}>
+              <Link to="/list/Front" style={{ textDecoration: 'none' }}>
                 <s.Content>Front-end</s.Content>
               </Link>
-              <Link to="/Back" style={{ textDecoration: "none" }}>
+              <Link to="/list/Back" style={{ textDecoration: 'none' }}>
                 <s.Content>Back-end</s.Content>
               </Link>
-              <Link to="/Android" style={{ textDecoration: "none" }}>
+              <Link to="/list/Android" style={{ textDecoration: 'none' }}>
                 <s.Content>Android</s.Content>
               </Link>
-              <Link to="/IOS" style={{ textDecoration: "none" }}>
+              <Link to="/list/IOS" style={{ textDecoration: 'none' }}>
                 <s.Content>IOS</s.Content>
               </Link>
-              <Link to="/AI" style={{ textDecoration: "none" }}>
+              <Link to="/list/AI" style={{ textDecoration: 'none' }}>
                 <s.Content>AI</s.Content>
               </Link>
-              <Link to="SECURITY" style={{ textDecoration: "none" }}>
+              <Link to="/list/SECURITY" style={{ textDecoration: 'none' }}>
                 <s.Content>SECURITY</s.Content>
               </Link>
-              <Link to="GAME" style={{ textDecoration: "none" }}>
+              <Link to="/list/GAME" style={{ textDecoration: 'none' }}>
                 <s.Content>GAME</s.Content>
               </Link>
             </s.Dropcontent>

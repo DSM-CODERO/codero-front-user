@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import * as S from "./styles";
-import logoImg from "../../../../assets/img/logo.png";
-import eyeImg from "../../../../assets/img/eye.png";
-import hideImg from "../../../../assets/img/hide.png";
-import sendImg from "../../../../assets/img/send.png";
-import axios from "axios";
-import { BASE_URL } from "../../../../api/export";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as S from './styles';
+import logoImg from '../../../../assets/img/logo.png';
+import eyeImg from '../../../../assets/img/eye.png';
+import hideImg from '../../../../assets/img/hide.png';
+import sendImg from '../../../../assets/img/send.png';
+import axios from 'axios';
+import { BASE_URL } from '../../../../api/export';
 
 export default function SignUp() {
   const [value, setValue] = useState({
-    email: "",
-    authentication: "",
-    authenticationCheck: "",
-    password: "",
+    email: '',
+    authentication: '',
+    authenticationCheck: '',
+    password: '',
     hidePassword: true,
-    passwordCheck: "",
+    passwordCheck: '',
     hidePasswordCheck: true,
-    nickname: "",
+    nickname: '',
   });
-
 
   async function emailAuthentication() {
     await axios
@@ -33,11 +33,9 @@ export default function SignUp() {
   }
 
   const handleClickHidePassword = (props) => () => {
-
-  const handleClickHidePassword = (props) => () => {
     console.log(props);
 
-    if (props === "hidePassword") {
+    if (props === 'hidePassword') {
       setValue({ ...value, hidePassword: !value.hidePassword });
     } else {
       setValue({ ...value, hidePasswordCheck: !value.hidePasswordCheck });
@@ -60,7 +58,7 @@ export default function SignUp() {
     if ("success" + authentication === authenticationCheck) {
       if (password === passwordCheck) {
         axios
-          .post(BASE_URL + "user", {
+          .post(BASE_URL + 'user', {
             username: nickname,
             email: email,
             password: password,
@@ -70,7 +68,7 @@ export default function SignUp() {
           })
           .catch((error) => console.log(error));
       } else {
-        alert("비밀번호가 동일하지 않습니다!");
+        alert('비밀번호가 동일하지 않습니다!');
       }
     } else {
       alert("인증번호가 올바르지 않습니다!");
@@ -78,15 +76,25 @@ export default function SignUp() {
     console.log(value);
   };
 
+  const navigate = useNavigate();
+
+  const loginHistory = () => {
+    navigate('/login');
+  };
+
+  const mainHistory = () => {
+    navigate('/');
+  };
+
   return (
     <>
       <S.Header>
-        <img src={logoImg} alt="" />
+        <img src={logoImg} alt="" onClick={mainHistory} />
       </S.Header>
       <S.MainDiv>
         <div className="sign">
           <button className="login">
-            <span>로그인</span>
+            <span onClick={loginHistory}>로그인</span>
           </button>
           <button className="signUp">
             <span>회원가입</span>
@@ -96,7 +104,7 @@ export default function SignUp() {
           <div>
             <input
               type="text"
-              onChange={handleInputChange("email")}
+              onChange={handleInputChange('email')}
               className="email"
               placeholder="E-mail"
             />
@@ -109,19 +117,19 @@ export default function SignUp() {
           </div>
           <input
             type="text"
-            onChange={handleInputChange("authentication")}
+            onChange={handleInputChange('authentication')}
             className="authentication"
             placeholder="인증번호를 입력하세요"
           />
           <div>
             <input
-              type={value.hidePassword ? "password" : "text"}
-              onChange={handleInputChange("password")}
+              type={value.hidePassword ? 'password' : 'text'}
+              onChange={handleInputChange('password')}
               className="password"
               placeholder="Password"
             />
             <img
-              onClick={handleClickHidePassword("hidePassword")}
+              onClick={handleClickHidePassword('hidePassword')}
               className="look"
               src={value.hidePassword ? eyeImg : hideImg}
               alt=""
@@ -129,13 +137,13 @@ export default function SignUp() {
           </div>
           <div>
             <input
-              type={value.hidePasswordCheck ? "password" : "text"}
-              onChange={handleInputChange("passwordCheck")}
+              type={value.hidePasswordCheck ? 'password' : 'text'}
+              onChange={handleInputChange('passwordCheck')}
               className="password"
               placeholder="Password 확인"
             />
             <img
-              onClick={handleClickHidePassword("hidePasswordCheck")}
+              onClick={handleClickHidePassword('hidePasswordCheck')}
               className="look"
               src={value.hidePasswordCheck ? eyeImg : hideImg}
               alt=""
@@ -143,7 +151,7 @@ export default function SignUp() {
           </div>
           <input
             type="text"
-            onChange={handleInputChange("nickname")}
+            onChange={handleInputChange('nickname')}
             className="nickname"
             placeholder="닉네임"
           />
@@ -152,70 +160,6 @@ export default function SignUp() {
           </div>
         </div>
       </S.MainDiv>
-        <div className="sign">
-            <button className="login">
-              <span>로그인</span>
-            </button>
-            <button className="signUp">
-              <span>회원가입</span>
-            </button>
-          </div>
-          <div className="main">
-            <div>
-              <input
-                type="text"
-                onChange={handleInputChange("email")}
-                className="email"
-                placeholder="E-mail"
-              />
-              <img className="send" src={sendImg} alt="" />
-            </div>
-            <input
-              type="text"
-              onChange={handleInputChange("authentication")}
-              className="authentication"
-              placeholder="인증번호를 입력하세요"
-            />
-            <div>
-              <input
-                type={value.hidePassword ? "password" : "text"}
-                onChange={handleInputChange("password")}
-                className="password"
-                placeholder="Password"
-              />
-              <img
-                onClick={handleClickHidePassword("hidePassword")}
-                className="look"
-                src={value.hidePassword ? eyeImg : hideImg}
-                alt=""
-              />
-            </div>
-            <div>
-              <input
-                type={value.hidePasswordCheck ? "password" : "text"}
-                onChange={handleInputChange("passwordCheck")}
-                className="password"
-                placeholder="Password 확인"
-              />
-              <img
-                onClick={handleClickHidePassword("hidePasswordCheck")}
-                className="look"
-                src={value.hidePasswordCheck ? eyeImg : hideImg}
-                alt=""
-              />
-            </div>
-            <input
-              type="text"
-              onChange={handleInputChange("nickname")}
-              className="nickname"
-              placeholder="닉네임"
-            />
-            <div className="signUpBtn">
-              <span>회원가입</span>
-            </div>
-          </div>
-      </S.MainDiv>
-      <Footer />
     </>
   );
 }

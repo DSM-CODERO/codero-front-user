@@ -1,21 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+import Header from '../../header/Header';
 import { requestWithToken } from '../../../../api/axios';
 import ImageView from '../makePost/ImageView';
 import * as S from '../makePost/style';
 
 const PatchPost = () => {
   const languageList = [
-    'C/C++', // 임시로 작성한 언어 리스트
-    'C#',
-    'Objective-C',
-    'GO',
-    'Java',
-    'Python',
-    'JavaScript',
-    'TypeScript',
-    'Kotlin',
-    'Swift',
-    'Dart',
+    'Front-end',
+    'Back-end',
+    'Android',
+    'IOS',
+    'AI',
+    'SECURITY',
+    'GAME',
   ];
 
   const contentRef = useRef();
@@ -81,69 +78,72 @@ const PatchPost = () => {
   };
 
   return (
-    <S.Page>
-      <S.Panel>
-        <S.Title>게시물 수정</S.Title>
-        <S.InputPanel>
-          <S.InputHeader>
-            <S.TitleInput
-              value={title}
-              placeholder="제목을 입력해주세요"
-              maxLength="100"
-              spellCheck="false"
-              name="title"
-              onChange={dataChange}
-              onKeyUp={nextFocus}
-            />
-            <S.LangSelect
-              ref={languageRef}
-              value={filed}
-              onChange={dataChange}
-              name="filed"
-            >
-              {languageList.map((language) => (
-                <option key={language}>{language}</option>
-              ))}
-            </S.LangSelect>
-            <S.AddFile htmlFor="input-file">파일첨부</S.AddFile>
-            <input
-              style={{ display: 'none' }}
-              onChange={chooseFile}
-              id="input-file"
-              type="file"
-              accept=" image/jpeg, image/png, image/jpg"
-            />
-          </S.InputHeader>
-          <S.PostInput
-            value={context}
-            name="context"
-            onChange={dataChange}
-            ref={contentRef}
-            spellCheck="false"
-            placeholder="내용을 입력해주세요"
-            maxLength="1000"
-          />
-          <S.Preview>
-            {fileUrl.map((img) => (
-              <ImageView
-                key={img.id}
-                image={img}
-                setFile={setFileUrl}
-                data={fileUrl}
+    <>
+      <Header />
+      <S.Page>
+        <S.Panel>
+          <S.Title>게시물 수정</S.Title>
+          <S.InputPanel>
+            <S.InputHeader>
+              <S.TitleInput
+                value={title}
+                placeholder="제목을 입력해주세요"
+                maxLength="100"
+                spellCheck="false"
+                name="title"
+                onChange={dataChange}
+                onKeyUp={nextFocus}
               />
-            ))}
-          </S.Preview>
-        </S.InputPanel>
-        <S.BtnBar>
-          <S.Delete className="del" onClick={del}>
-            게시물 삭제
-          </S.Delete>
-          <S.Submit className="patch" onClick={submit}>
-            게시물 수정
-          </S.Submit>
-        </S.BtnBar>
-      </S.Panel>
-    </S.Page>
+              <S.LangSelect
+                ref={languageRef}
+                value={filed}
+                onChange={dataChange}
+                name="filed"
+              >
+                {languageList.map((language) => (
+                  <option key={language}>{language}</option>
+                ))}
+              </S.LangSelect>
+              <S.AddFile htmlFor="input-file">파일첨부</S.AddFile>
+              <input
+                style={{ display: 'none' }}
+                onChange={chooseFile}
+                id="input-file"
+                type="file"
+                accept=" image/jpeg, image/png, image/jpg"
+              />
+            </S.InputHeader>
+            <S.PostInput
+              value={context}
+              name="context"
+              onChange={dataChange}
+              ref={contentRef}
+              spellCheck="false"
+              placeholder="내용을 입력해주세요"
+              maxLength="1000"
+            />
+            <S.Preview>
+              {fileUrl.map((img) => (
+                <ImageView
+                  key={img.id}
+                  image={img}
+                  setFile={setFileUrl}
+                  data={fileUrl}
+                />
+              ))}
+            </S.Preview>
+          </S.InputPanel>
+          <S.BtnBar>
+            <S.Delete className="del" onClick={del}>
+              게시물 삭제
+            </S.Delete>
+            <S.Submit className="patch" onClick={submit}>
+              게시물 수정
+            </S.Submit>
+          </S.BtnBar>
+        </S.Panel>
+      </S.Page>
+    </>
   );
 };
 
