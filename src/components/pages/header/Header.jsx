@@ -17,7 +17,6 @@ function Header() {
       <s.HeadDiv>
         <s.MarkImg src={mark} alt="logo" onClick={onClickMain} />
         <s.Select type="input" placeholder="검색할 분야를 입력해주세요" />
-        <s.DocImg src={doc} alt="logo" />
         <s.Button>
           <s.Dropdown>
             MENU
