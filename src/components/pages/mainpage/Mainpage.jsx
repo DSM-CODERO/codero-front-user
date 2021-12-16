@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Front from "../../../assets/js.png";
-import Back from "../../../assets/java.png";
-import Android from "../../../assets/android.png";
-import ios from "../../../assets/apple.png";
-import * as s from "./style";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Front from '../../../assets/js.png';
+import Back from '../../../assets/java.png';
+import Android from '../../../assets/android.png';
+import ios from '../../../assets/apple.png';
+import * as s from './style';
+import axios from 'axios';
 
-axios.defaults.baseURL = "http://13.125.220.4:4000/";
+axios.defaults.baseURL = 'http://13.125.220.4:4000/';
 
 function Mainpage() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
     axios
-      .get("/board/allview?page=1")
+      .get('/board/allview?page=1')
       .then((res) => {
         setInfo(res.data);
       })
@@ -39,7 +39,7 @@ function Mainpage() {
               return props.title ? (
                 <Link
                   to={`${props.board_id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: 'none' }}
                 >
                   <s.BoardProduct key={i}>
                     <s.ProductTitle>{props.title}</s.ProductTitle>
@@ -58,7 +58,7 @@ function Mainpage() {
               return props.title ? (
                 <Link
                   to={`${props.board_id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: 'none' }}
                 >
                   <s.BoardProduct key={i}>
                     <s.ProductTitle>{props.title}</s.ProductTitle>
@@ -77,7 +77,7 @@ function Mainpage() {
               return props.title ? (
                 <Link
                   to={`${props.board_id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: 'none' }}
                 >
                   <s.BoardProduct key={i}>
                     <s.ProductTitle>{props.title}</s.ProductTitle>
@@ -93,25 +93,10 @@ function Mainpage() {
         </s.Board>
       </s.Flex>
       <s.Belt>
-        <Link to="/Front" style={{ textDecoration: "none" }}>
-          <s.List>
-            <s.ListImg src={Front} alt="logo" />
-            Frontend
-          </s.List>
-        </Link>
-        <Link to="/Back" style={{ textDecoration: "none" }}>
-          <s.List>
-            <s.ListImg src={Back} alt="logo" />
-            Backend
-          </s.List>
-        </Link>
-        <Link to="/Android" style={{ textDecoration: "none" }}>
-          <s.List>
-            <s.ListImg src={Android} alt="logo" />
-            Android
-          </s.List>
-        </Link>
-        <Link to="/IOS" style={{ textDecoration: "none" }}>
+        <Link to="/Front" style={{ textDecoration: 'none' }}></Link>
+        <Link to="/Back" style={{ textDecoration: 'none' }}></Link>
+        <Link to="/Android" style={{ textDecoration: 'none' }}></Link>
+        <Link to="/IOS" style={{ textDecoration: 'none' }}>
           <s.List>
             <s.ListImg src={ios} alt="logo" />
             IOS
