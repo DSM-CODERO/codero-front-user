@@ -21,13 +21,11 @@ export default function SignUp() {
   });
 
   async function emailAuthentication() {
-    const params = {
-      email: value.email,
-    };
     await axios
-      .get(`http://13.125.215.87/email`, { params })
+      .post(BASE_URL + `user/email`, { email: value.email })
       .then((res) => {
-        setValue({ ...value, authenticationCheck: res.data });
+        console.log(res);
+        setValue({ ...value, authenticationCheck: res.data.msg });
       })
       .catch((err) => {
         console.log(err);
@@ -57,7 +55,7 @@ export default function SignUp() {
       authentication,
       authenticationCheck,
     } = value;
-    if (authentication === authenticationCheck) {
+    if ("success" + authentication === authenticationCheck) {
       if (password === passwordCheck) {
         axios
           .post(BASE_URL + 'user', {
@@ -66,14 +64,14 @@ export default function SignUp() {
             password: password,
           })
           .then((res) => {
-            alert(res.data);
+            alert("회원가입 성공!")
           })
           .catch((error) => console.log(error));
       } else {
         alert('비밀번호가 동일하지 않습니다!');
       }
     } else {
-      alert('인증번호가 맞지 않습니다!');
+      alert("인증번호가 올바르지 않습니다!");
     }
     console.log(value);
   };
