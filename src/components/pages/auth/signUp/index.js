@@ -163,10 +163,12 @@ export default function SignUp() {
             className="nickname"
             placeholder="닉네임"
           />
-          {/* <input type="submit" /> */}
-          <div className="signUpBtn" onClick={submitSignup}>
-            <span>회원가입</span>
-          </div>
+          <input
+            type="submit"
+            value="회원가입"
+            className="signUpBtn"
+            onClick={submitSignup}
+          />
         </div>
       </S.MainDiv>
     </>
