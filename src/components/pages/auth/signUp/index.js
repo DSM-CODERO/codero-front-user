@@ -31,7 +31,6 @@ export default function SignUp() {
         console.log(err);
       });
   }
-
   const handleClickHidePassword = (props) => () => {
     console.log(props);
 
@@ -55,23 +54,32 @@ export default function SignUp() {
       authentication,
       authenticationCheck,
     } = value;
-    if ("success" + authentication === authenticationCheck) {
-      if (password === passwordCheck) {
-        axios
-          .post(BASE_URL + 'user', {
-            username: nickname,
-            email: email,
-            password: password,
-          })
-          .then((res) => {
-            alert("회원가입 성공!")
-          })
-          .catch((error) => console.log(error));
+    if (
+      email !== '' &&
+      password !== '' &&
+      passwordCheck !== '' &&
+      nickname !== ''
+    ) {
+      if ('success' + authentication === authenticationCheck) {
+        if (password === passwordCheck) {
+          axios
+            .post(BASE_URL + 'user', {
+              username: nickname,
+              email: email,
+              password: password,
+            })
+            .then((res) => {
+              alert('회원가입 성공!');
+            })
+            .catch((error) => console.log(error));
+        } else {
+          alert('비밀번호가 동일하지 않습니다!');
+        }
       } else {
-        alert('비밀번호가 동일하지 않습니다!');
+        alert('인증번호가 올바르지 않습니다!');
       }
     } else {
-      alert("인증번호가 올바르지 않습니다!");
+      alert('내용을 입력해주세요!');
     }
     console.log(value);
   };
@@ -155,9 +163,12 @@ export default function SignUp() {
             className="nickname"
             placeholder="닉네임"
           />
-          <div className="signUpBtn" onClick={submitSignup}>
-            <span>회원가입</span>
-          </div>
+          <input
+            type="submit"
+            value="회원가입"
+            className="signUpBtn"
+            onClick={submitSignup}
+          />
         </div>
       </S.MainDiv>
     </>

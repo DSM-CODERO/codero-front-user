@@ -6,6 +6,7 @@ import MyPage from './components/pages/myPage/index';
 import MainPage from './components/pages/mainpage/Mainpage';
 import WritePost from './components/pages/writePost/makePost/WritePost';
 import PatchPost from './components/pages/writePost/putchPost/PatchPost';
+import Footer from './components/common/footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route element={<PatchPost />} path="/patchpost" />
         <Route element={<ListPage />} path="/list/:listname" />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

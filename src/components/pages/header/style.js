@@ -40,13 +40,6 @@ export const MarkImg = styled.img`
   margin-left: 50px;
 `;
 
-export const DocImg = styled.img`
-  width: 18px;
-  height: 18px;
-  margin-left: 200px;
-  position: absolute;
-`;
-
 export const Dropdown = styled.div`
   position: relative;
   display: inline-block;

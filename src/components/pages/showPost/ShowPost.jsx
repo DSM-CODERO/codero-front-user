@@ -1,4 +1,5 @@
 import * as S from './style';
+import Header from '../header/Header';
 import patchBtn from '../../../assets/img/patchBtn.svg';
 import del from '../../../assets/img/del.svg';
 import { useEffect, useState } from 'react';
@@ -43,6 +44,7 @@ const ShowPost = () => {
   }, []);
   return (
     <div>
+      <Header />
       <S.ContentHeader>
         <S.TitleBar>
           <S.TopTitle>{boardData.title}</S.TopTitle>
