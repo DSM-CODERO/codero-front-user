@@ -41,7 +41,7 @@ function Mainpage() {
               {arr_slice1.map((props, i) => {
                 return props.title ? (
                   <Link
-                    to={`${props.board_id}`}
+                    to={`/board/${props.board_id}`}
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
@@ -60,7 +60,7 @@ function Mainpage() {
               {arr_slice2.map((props, i) => {
                 return props.title ? (
                   <Link
-                    to={`${props.board_id}`}
+                    to={`/board/${props.board_id}`}
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
@@ -79,7 +79,7 @@ function Mainpage() {
               {arr_slice3.map((props, i) => {
                 return props.title ? (
                   <Link
-                    to={`${props.board_id}`}
+                    to={`/board/${props.board_id}`}
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
