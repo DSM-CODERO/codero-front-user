@@ -6,13 +6,13 @@ import noLike from '../../../assets/img/noLike.svg';
 import OneUserComment from './OneUserComment';
 import { requestWithToken } from '../../../api/axios';
 
-const Comment = () => {
+const Comment = ({ board_id }) => {
   const commentRef = useRef();
   const [likeState, setLikeState] = useState(false);
   const [commentData, setCommentData] = useState([]);
 
   useEffect(() => {
-    requestWithToken('get', `board/19/comment`, {}).then((res) => {
+    requestWithToken('get', `board/${board_id}/comment`, {}).then((res) => {
       setCommentData(res);
     });
   }, []);
@@ -24,10 +24,10 @@ const Comment = () => {
     if (comment.length > 500) {
       alert('비정상적인 입력이 감지되었습니다');
     } else {
-      requestWithToken('post', `board/19/comment`, {
+      requestWithToken('post', `board/${board_id}/comment`, {
         context: comment,
       }).then(() => {
-        requestWithToken('get', `board/19/comment`, {}).then((res) => {
+        requestWithToken('get', `board/${board_id}/comment`, {}).then((res) => {
           setCommentData(res);
         });
         commentRef.current.value = '';

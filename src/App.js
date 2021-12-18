@@ -7,6 +7,7 @@ import MainPage from './components/pages/mainpage/Mainpage';
 import WritePost from './components/pages/writePost/makePost/WritePost';
 import PatchPost from './components/pages/writePost/putchPost/PatchPost';
 import Footer from './components/common/footer';
+import PostPage from './components/pages/showPost/PostPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route element={<WritePost />} path="/writepost" />
         <Route element={<PatchPost />} path="/patchpost" />
         <Route element={<ListPage />} path="/list/:listname" />
+        <Route element={<PostPage />} path="/board/:board_id" />
       </Routes>
       <Footer />
     </BrowserRouter>

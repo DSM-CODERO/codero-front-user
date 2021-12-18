@@ -47,7 +47,7 @@ function ListPage() {
                 <tr>
                   <s.ListTd>
                     <Link
-                      to={`${item.board_id}`}
+                      to={`/board/${item.board_id}`}
                       style={{ textDecoration: 'none' }}
                     >
                       {item.title}
