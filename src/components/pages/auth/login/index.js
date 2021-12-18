@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 import LogoImg from '../../../../assets/img/logo.png';
@@ -8,7 +9,6 @@ import axios from 'axios';
 import { BASE_URL } from '../../../../api/export';
 
 export default function Login() {
-
   const [value, setValue] = useState({
     email: '',
     password: '',
@@ -35,6 +35,7 @@ export default function Login() {
       .then(onLoginSuccess)
       .catch((err) => {
         console.log(err);
+        swal('로그인 실패', '이메일 및 비밀번호를 확인해주세요', 'error');
       });
   };
 
@@ -42,6 +43,8 @@ export default function Login() {
     const { accessToken } = res.data;
     localStorage.setItem('Authorization', accessToken);
     axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+    swal('로그인 성공', 'You clicked the button!', 'success');
+    navigate('/');
   };
 
   const navigate = useNavigate();
