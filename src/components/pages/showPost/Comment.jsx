@@ -3,7 +3,6 @@ import submitPen from '../../../assets/img/commentPen.svg';
 import * as S from './style';
 import like from '../../../assets/img/like.svg';
 import noLike from '../../../assets/img/noLike.svg';
-import OneUserComment from './OneUserComment';
 import { requestWithToken } from '../../../api/axios';
 
 const Comment = ({ board_id }) => {
@@ -61,7 +60,12 @@ const Comment = ({ board_id }) => {
       </S.CommentInputBar>
       <S.CommentBox>
         {commentData.map((data) => (
-          <OneUserComment key={data.id} data={data} />
+          <S.Comment>
+            <span>
+              <b>{data.user_id}</b>
+              {data.context}
+            </span>
+          </S.Comment>
         ))}
       </S.CommentBox>
     </div>
