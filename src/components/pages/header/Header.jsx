@@ -8,6 +8,11 @@ import * as s from './style';
 function Header() {
   const navigate = useNavigate();
 
+  const onLogout = () => {
+    localStorage.removeItem('accessToken');
+    window.location.replace('/');
+  };
+
   const onClickMain = () => {
     navigate('/');
   };
@@ -45,12 +50,20 @@ function Header() {
             </s.Dropcontent>
           </s.Dropdown>
         </s.Button>
-        <Link to="/MYPAGE">
-          <s.Button>MYPAGE</s.Button>
-        </Link>
-        <Link to="/LOGIN">
-          <s.Button>LOGIN/SIGN UP</s.Button>
-        </Link>
+        {localStorage.getItem('accessToken') ? (
+          <>
+            <s.Button type="button" value="LOGOUT" onClick={onLogout} />
+          </>
+        ) : (
+          <>
+            <Link to="/MYPAGE">
+              <s.Button>MYPAGE</s.Button>
+            </Link>
+            <Link to="/LOGIN">
+              <s.Button>LOGIN/SIGN UP</s.Button>
+            </Link>
+          </>
+        )}
       </s.HeadDiv>
     </s.Head>
   );

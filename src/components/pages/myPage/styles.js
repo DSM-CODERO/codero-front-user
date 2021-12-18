@@ -72,6 +72,7 @@ export const MainDiv = styled.div`
 
 export const MypageAuth = styled.div`
   margin-top: 20px;
+  margin-bottom: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
