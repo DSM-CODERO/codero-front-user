@@ -37,7 +37,7 @@ export default function MyPage() {
 
   return (
     <>
-      {localStorage.getItem('accessToken') ? (
+      {localStorage.getItem('Authorization') ? (
         <>
           <Header />
           <S.MainDiv>
