@@ -10,7 +10,7 @@ export const requestWithToken = (method, url, data) => {
       method,
       url,
       headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token'),
+        Authorization: 'Bearer ' + localStorage.getItem('Authorization'),
       },
       data,
     })
