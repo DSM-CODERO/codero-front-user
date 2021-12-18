@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Main = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const Board = styled.div`
   width: 1100px;
   height: 400px;
   background-color: rgba(18, 24, 49, 0.1);
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   border-radius: 20px;
   display: flex;
@@ -26,7 +26,7 @@ export const BoardList = styled.div`
   width: 400px;
   height: 375px;
   color: #2e3c7e;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   border: none;
   margin-top: 20px;
   margin-left: 40px;
@@ -39,7 +39,8 @@ export const BoardList = styled.div`
 export const BoardProduct = styled.div`
   width: 300px;
   height: 150px;
-  margin-top: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
   border-radius: 5px;
   box-shadow: gray 0px 3px 6px;
   background-color: white;
@@ -69,7 +70,7 @@ export const List = styled.div`
   border-radius: 10px;
   box-shadow: black 2px 8px 8px;
   color: white;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 20px;
 `;
 
@@ -81,8 +82,16 @@ export const ListImg = styled.img`
   margin-right: 50px;
 `;
 
-export const ProductTitle = styled.h2``;
+export const ProductTitle = styled.h2`
+  margin-bottom: 10px;
+  margin-left: 10px;
+`;
 
-export const ProductText = styled.h5``;
+export const ProductText = styled.h5`
+  margin-bottom: 10px;
+  margin-left: 10px;
+`;
 
-export const ProdcutField = styled.h6``;
+export const ProdcutField = styled.h6`
+  margin-left: 10px;
+`;

@@ -42,7 +42,7 @@ function Mainpage() {
                 return props.title ? (
                   <Link
                     to={`${props.board_id}`}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
                       <s.ProductTitle>{props.title}</s.ProductTitle>
@@ -61,7 +61,7 @@ function Mainpage() {
                 return props.title ? (
                   <Link
                     to={`${props.board_id}`}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
                       <s.ProductTitle>{props.title}</s.ProductTitle>
@@ -80,7 +80,7 @@ function Mainpage() {
                 return props.title ? (
                   <Link
                     to={`${props.board_id}`}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
                       <s.ProductTitle>{props.title}</s.ProductTitle>
