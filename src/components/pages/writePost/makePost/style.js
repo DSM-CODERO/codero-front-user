@@ -123,7 +123,7 @@ export const Submit = styled.button`
 
   font-family: 'Noto Sans KR';
   font-weight: 500;
-
+  cursor: pointer;
   &:active {
     transform: scale(0.98);
   }
@@ -133,6 +133,7 @@ export const Delete = styled(Submit)`
   background-color: #f54b4c;
   border: 0.1px #f54b4c solid;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const Preview = styled.div`
@@ -156,4 +157,38 @@ export const CancelBtn = styled.img`
   position: absolute;
   top: 13px;
   right: 13px;
+`;
+
+export const WritepageAuth = styled.div`
+  margin-top: 20px;
+  margin-bottom: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AuthHead = styled.div`
+  margin-top: 220px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const H2 = styled.h2``;
+
+export const LoginBtn = styled.input`
+  width: 150px;
+  height: 50px;
+  margin-right: 50px;
+  border: 1px solid #324290;
+  background-color: #324290;
+  color: white;
+  cursor: pointer;
+`;
+
+export const SignBtn = styled.input`
+  width: 150px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
 `;

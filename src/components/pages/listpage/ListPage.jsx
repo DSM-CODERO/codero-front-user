@@ -13,7 +13,7 @@ function ListPage() {
 
   useEffect(() => {
     axios
-      .get('/board/allview?page=1')
+      .get(`/board/filed/${params.listname}`)
       .then((res) => {
         setInfo(res.data);
         console.log(res.data);
@@ -47,7 +47,11 @@ function ListPage() {
                 <tr>
                   <s.ListTd>
                     <Link
+<<<<<<< Updated upstream
                       to={`/board/${item.board_id}`}
+=======
+                      to={`/showpost/${item.board_id}`}
+>>>>>>> Stashed changes
                       style={{ textDecoration: 'none' }}
                     >
                       {item.title}
@@ -63,7 +67,9 @@ function ListPage() {
         </s.ListBody>
         <s.BtnDiv>
           <s.AddBtn>
-            <s.Penimg src={pen} logo="alt" />
+            <Link to="/writepost">
+              <s.Penimg src={pen} logo="alt" />
+            </Link>
           </s.AddBtn>
         </s.BtnDiv>
         <s.PageDiv></s.PageDiv>

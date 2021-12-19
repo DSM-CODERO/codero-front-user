@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Head = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ export const Select = styled.input`
   margin-right: 130px;
   border-radius: 5px;
   border: none;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   padding-left: 20px;
 `;
 export const Button = styled.button`
@@ -26,7 +26,7 @@ export const Button = styled.button`
   border: none;
   background-color: #2e3c7e;
   color: white;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   &:hover {
     text-decoration: underline;
   }

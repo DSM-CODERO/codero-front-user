@@ -87,11 +87,11 @@ export const ProductTitle = styled.h2`
   margin-left: 10px;
 `;
 
-export const ProductText = styled.h5`
+export const ProductText = styled.h6`
   margin-bottom: 10px;
   margin-left: 10px;
 `;
 
-export const ProdcutField = styled.h6`
+export const ProdcutField = styled.h4`
   margin-left: 10px;
 `;

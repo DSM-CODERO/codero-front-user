@@ -11,7 +11,11 @@ const Comment = ({ board_id }) => {
   const [commentData, setCommentData] = useState([]);
 
   useEffect(() => {
+<<<<<<< Updated upstream
     requestWithToken('get', `board/${board_id}/comment`, {}).then((res) => {
+=======
+    requestWithToken('get', `board/1/comment`, {}).then((res) => {
+>>>>>>> Stashed changes
       setCommentData(res);
     });
   }, []);
@@ -39,7 +43,7 @@ const Comment = ({ board_id }) => {
   };
 
   return (
-    <div>
+    <S.Commentdiv>
       <S.CommentInputBar>
         <S.CommentInput
           maxLength="500"
@@ -68,7 +72,7 @@ const Comment = ({ board_id }) => {
           </S.Comment>
         ))}
       </S.CommentBox>
-    </div>
+    </S.Commentdiv>
   );
 };
 

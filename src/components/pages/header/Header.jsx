@@ -2,14 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import mark from '../../../assets/mark.png';
-import doc from '../../../assets/doc.png';
 import * as s from './style';
 
 function Header() {
   const navigate = useNavigate();
 
   const onLogout = () => {
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem('Authorization');
     window.location.replace('/');
   };
 
@@ -50,9 +49,12 @@ function Header() {
             </s.Dropcontent>
           </s.Dropdown>
         </s.Button>
-        {localStorage.getItem('accessToken') ? (
+        {localStorage.getItem('Authorization') ? (
           <>
-            <s.Button type="button" value="LOGOUT" onClick={onLogout} />
+            <Link to="/MYPAGE">
+              <s.Button>MYPAGE</s.Button>
+            </Link>
+            <s.Button onClick={onLogout}>LOGOUT</s.Button>
           </>
         ) : (
           <>

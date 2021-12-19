@@ -12,9 +12,18 @@ export default function MyPage() {
   const [post, setPost] = useState([]);
 
   axios
-    .get(BASE_URL + 'board/mypage?page=5')
+    .get(BASE_URL + 'board/mypage?page=1')
     .then((res) => {
       setPost(res.data);
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  axios
+    .get(BASE_URL + '/user/mypage')
+    .then((res) => {
       console.log(res.data);
     })
     .catch((err) => {
@@ -52,7 +61,6 @@ export default function MyPage() {
               <img src={profileImg} alt="" />
               <span className="information">
                 <div className="user">USER 님</div>
-                <div>id123</div>
                 <div>user@gmail.com</div>
               </span>
             </div>

@@ -6,7 +6,7 @@ export const Page = styled.main`
 `;
 
 export const Panel = styled.div`
-  width: auto;
+  width: 100%;
   display: grid;
 `;
 
@@ -42,7 +42,6 @@ export const Button = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 5px;
 
   // 밀줄 치는 코드
   text-decoration: none;
@@ -65,11 +64,19 @@ export const Button = styled.div`
   }
 `;
 
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const BtnBar = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
-  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   justify-self: right;
 `;
 
@@ -87,20 +94,23 @@ export const TopTitle = styled.span`
 `;
 
 export const Language = styled.span`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  margin-left: 10px;
+  margin-top: 8px;
+  margin-left: 15px;
+  margin-right: 880px;
   color: #324290;
 `;
 
 export const TitleBar = styled.div`
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
 `;
 
 export const ContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
   margin-bottom: 20px;
 `;
 
@@ -280,4 +290,11 @@ export const Like = styled.img`
     }
   }
   animation: ${({ like }) => like && 'heartClick 1s'};
+`;
+
+export const Commentdiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
