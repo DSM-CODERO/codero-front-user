@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../header/Header';
 import * as S from './styles';
@@ -9,27 +9,36 @@ import { BASE_URL } from '../../../api/export';
 import { useState } from 'react/cjs/react.development';
 
 export default function MyPage() {
+  const [userGet, SetuserGet] = useState({
+    username: '',
+    email: '',
+  });
   const [post, setPost] = useState([]);
+  useEffect(() => {
+    axios
+      .get(BASE_URL + 'board/mypage?mypage=1')
+      .then((res) => {
+        setPost(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-  axios
-    .get(BASE_URL + 'board/mypage?page=1')
-    .then((res) => {
-      setPost(res.data);
-      console.log(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    const token = localStorage.getItem('Authorization');
 
-  axios
-    .get(BASE_URL + '/user/mypage')
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
+    axios
+      .get(BASE_URL + 'user/mypage', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        SetuserGet(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const navigate = useNavigate();
 
   const writeHistory = () => {
@@ -60,14 +69,13 @@ export default function MyPage() {
             <div className="profile">
               <img src={profileImg} alt="" />
               <span className="information">
-                <div className="user">USER 님</div>
-                <div>user@gmail.com</div>
+                <div className="user">{userGet.username}</div>
+                <div>{userGet.email}</div>
               </span>
             </div>
             <div className="mainPost">
               <div>
                 <span className="writePost">내가 작성한 게시물</span>
-                <span className="goodPost">좋아요한 게시물</span>
               </div>
               <hr />
               <div className="post">

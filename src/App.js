@@ -8,7 +8,6 @@ import WritePost from './components/pages/writePost/makePost/WritePost';
 import PatchPost from './components/pages/writePost/putchPost/PatchPost';
 import PostPage from './components/pages/showPost/PostPage';
 import Footer from './components/common/footer';
-import PostPage from './components/pages/showPost/PostPage';
 
 function App() {
   return (

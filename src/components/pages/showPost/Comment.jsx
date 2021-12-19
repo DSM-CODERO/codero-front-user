@@ -11,11 +11,7 @@ const Comment = ({ board_id }) => {
   const [commentData, setCommentData] = useState([]);
 
   useEffect(() => {
-<<<<<<< Updated upstream
     requestWithToken('get', `board/${board_id}/comment`, {}).then((res) => {
-=======
-    requestWithToken('get', `board/1/comment`, {}).then((res) => {
->>>>>>> Stashed changes
       setCommentData(res);
     });
   }, []);

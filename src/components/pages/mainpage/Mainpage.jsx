@@ -41,11 +41,7 @@ function Mainpage() {
               {arr_slice1.map((props, i) => {
                 return props.title ? (
                   <Link
-<<<<<<< Updated upstream
                     to={`/board/${props.board_id}`}
-=======
-                    to={`/showpost/${props.board_id}`}
->>>>>>> Stashed changes
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
@@ -64,11 +60,7 @@ function Mainpage() {
               {arr_slice2.map((props, i) => {
                 return props.title ? (
                   <Link
-<<<<<<< Updated upstream
                     to={`/board/${props.board_id}`}
-=======
-                    to={`/showpost/${props.board_id}`}
->>>>>>> Stashed changes
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>
@@ -87,11 +79,7 @@ function Mainpage() {
               {arr_slice3.map((props, i) => {
                 return props.title ? (
                   <Link
-<<<<<<< Updated upstream
                     to={`/board/${props.board_id}`}
-=======
-                    to={`/showpost/${props.board_id}`}
->>>>>>> Stashed changes
                     style={{ textDecoration: 'none', color: '#2D3B7E' }}
                   >
                     <s.BoardProduct key={i}>

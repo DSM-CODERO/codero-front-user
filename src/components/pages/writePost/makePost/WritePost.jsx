@@ -46,8 +46,6 @@ const WritePost = () => {
           console.log(err);
         })
         .then((e) => {
-          titleRef.current.value = '';
-          contentRef.current.value = '';
           setFileUrl([]);
         });
 

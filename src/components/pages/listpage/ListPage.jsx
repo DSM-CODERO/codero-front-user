@@ -47,11 +47,7 @@ function ListPage() {
                 <tr>
                   <s.ListTd>
                     <Link
-<<<<<<< Updated upstream
-                      to={`/board/${item.board_id}`}
-=======
                       to={`/showpost/${item.board_id}`}
->>>>>>> Stashed changes
                       style={{ textDecoration: 'none' }}
                     >
                       {item.title}
