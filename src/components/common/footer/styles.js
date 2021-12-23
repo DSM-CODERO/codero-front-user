@@ -4,7 +4,8 @@ export const FooterDiv = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap");
   width: 100%;
   height: 104px;
-  margin-bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: flex-end;

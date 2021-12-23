@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Header = styled.div`
   display: flex;
@@ -11,12 +11,12 @@ export const Header = styled.div`
 `;
 
 export const MainDiv = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap');
   display: flex;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 40px;
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
   .sign {
     button {
       font-size: 17px;
@@ -97,10 +97,9 @@ export const MainDiv = styled.div`
       justify-content: center;
       align-items: center;
       margin-top: 43px;
+      color: white;
+      font-size: 17px;
       cursor: pointer;
-      span {
-        color: white;
-      }
     }
     .email {
       margin-top: 42px;
